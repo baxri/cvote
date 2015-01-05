@@ -7,12 +7,12 @@ $(document).ready(function(){
 	*/
 
 	
-	FB.Event.subscribe(event, function(){
+	/*FB.Event.subscribe(event, function(){
 		
 		
 		console.log(event);
 		
-	});
+	});*/
 	
 	document.oncontextmenu = function(){return false;};
 	document.onselectstart= function() {return false;}; 

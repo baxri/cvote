@@ -46,7 +46,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 			
 			<div class="nav-collapse collapse navbar-responsive-collapse">
 				<ul class="nav row">
-					<li data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">მთავარი</span></a></li>
+					<li style="margin-right: 50px;" data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">გვერდის საწყისი</span></a></li>
 					<li style="margin-right: 120px;" data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">როგორ გამოვიყენო აპლიკაცია?</span></a></li>
 					
 					<?php /* ?>

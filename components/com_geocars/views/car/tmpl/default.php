@@ -36,14 +36,20 @@ defined('_JEXEC') or die;
 	<div class="main_container" style="width: auto; padding: 20px; padding-top: 60px;">
 
 		<?php if( $this->item->plus >= $this->item->minus ): ?>
-			<div class="inner_div2" style="background-color: #428bca; height: 5px;"></div>
+			<div class="inner_div2" style="background-color: #428bca; height: 10px;"></div>
 		<?php else: ?>
-			<div class="inner_div2" style="background-color: #d9534f; height: 5px;"></div>
+			<div class="inner_div2" style="background-color: #d9534f; height: 10px;"></div>
 		<?php endif; ?>
 
 		<div class="inner_div">
 			<div>
-				<h3><?php echo $this->item->category_title ?> <?php echo $this->item->name ?></h3>
+				<h3 style="font-weight: bold;"><?php echo $this->item->category_title ?> <?php echo $this->item->name ?></h3>
+			</div>
+
+			<div>
+				<a style="font-size: 9pt;" href="index.php" class="btn btn-default">
+					მთავარზე დაბრუნება
+				</a>
 			</div>
 
 			<?php /* ?>
