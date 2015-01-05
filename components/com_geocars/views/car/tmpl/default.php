@@ -45,7 +45,7 @@ defined('_JEXEC') or die;
 			<div>
 				<h3><?php echo $this->item->category_title ?> <?php echo $this->item->name ?></h3>
 			</div>
-						
+
 			<?php /* ?>
 			<div class="image_block">	
 				<?php if( !empty( $this->item->image_1 ) ): ?><img class="img-responsive img-circle" src="<?php echo $this->item->image_1 ?>" id="car_image" /><?php endif; ?>
@@ -61,6 +61,7 @@ defined('_JEXEC') or die;
 				<div style="margin-bottom: 1px;">
 					<div class="vote-text"><span style="color: #d9534f; font-weight: bold;" id="minus-vote-result"><?php echo $this->item->minus ?></span> ადამიანი არ არის კმაყოფილი ამ ავტომობილით</div>
 				</div>
+
 				<p>თქვენ კმაყოფილი ხართ ამ ავტომობილით?</p>
 
 				<div class="votting-buttons btn-group" role="group" aria-label="...">
