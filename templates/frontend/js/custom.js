@@ -2,6 +2,22 @@
 $(document).ready(function(){
 	
 	/*
+	* Set listener if someone comentts on my web pag please note me
+	*
+	*/
+
+	
+	FB.Event.subscribe(event, function(){
+		
+		
+		console.log(event);
+		
+	});
+	
+	document.oncontextmenu = function(){return false;};
+	document.onselectstart= function() {return false;}; 
+	
+	/*
 	* Reset dearch dropdowns after page refresh
 	*
 	*/
@@ -19,8 +35,14 @@ $(document).ready(function(){
 		var category = $("#category").val();
 		var model = $("#model").val();
 		
+		$("#search-result").hide();
+		$("#search-loader").show();
+		
 		$.getJSON('index.php?option=com_geocars&task=getCarModelsByCategory&category=' + category, function(data){
-
+			
+			$("#search-result").show();
+			$("#search-loader").hide();
+			
 			var html = "<option value=''>აირჩიეთ მოდელი</option>";
 
 			if( data.models.length > 0 ){
@@ -97,7 +119,9 @@ $(document).ready(function(){
 
 		if( !$(this).hasClass("disabled") ){
 			var model_id = $(this).attr("data-carid");
-
+			
+			disableVotting();
+			
 			if( model_id.length > 0 ){
 				$.getJSON("index.php?option=com_geocars&task=voteSuccess&model=" + model_id, function(data){
 
@@ -117,7 +141,9 @@ $(document).ready(function(){
 	$("#danger-vote").bind("click", function(){
 		if( !$(this).hasClass("disabled") ){
 			var model_id = $(this).attr("data-carid");
-
+			
+			disableVotting();
+			
 			if( model_id.length > 0 ){
 				$.getJSON("index.php?option=com_geocars&task=votedanger&model=" + model_id, function(data){
 					if( data.code == 0 ){

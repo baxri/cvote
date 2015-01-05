@@ -53,7 +53,12 @@ class GeocarsViewCar extends JView
 		}
 
 		$this->voted = $model->getVote( $car_id );
-
+		
+		$this->page_suffix = 'car/'.$this->item->category_alias.'/'.$this->item->alias;
+		
+		$this->app_url = 'http://testdomain.ge';
+		$this->page_url = $this->app_url.'/'.$this->page_suffix;
+				
 		parent::display($tpl);
 	}
 

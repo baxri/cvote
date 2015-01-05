@@ -78,12 +78,12 @@ defined('_JEXEC') or die;
 				}(document, 'script', 'facebook-jssdk'));</script>
 
 				<div class="like_button_div"  style="padding-top: 10px; margin: 0px auto; display: table; text-align: center;">
-					<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flocalhost&amp;layout=button_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" style="overflow:hidden;width:100%;height:80px;" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.staubsauger-test.biz" class="fbook">www.staubsauger-test.biz</a></iframe>
+					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo $this->page_url ?>&amp;layout=button_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" style="overflow:hidden;width:100%;height:80px;" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.staubsauger-test.biz" class="fbook">www.staubsauger-test.biz</a></iframe>
 				</div>
 
 				<br />
 				<br />
-				<div class="fb-share-button" data-href="https://localhost" data-layout="button"></div>
+				<div class="fb-share-button" data-href="<?php echo $this->page_url ?>" data-layout="button"></div>
 
 
 				
@@ -108,7 +108,7 @@ defined('_JEXEC') or die;
 
 		<div id="fb-root"></div>
 		<script src="http://connect.facebook.net/ka_GE/all.js#xfbml=1"></script>
-		<fb:comments href="http://www.geocars.ge" data-width="100%"></fb:comments>
+		<fb:comments href="<?php echo $this->page_url ?>" data-width="100%"></fb:comments>
 
 	</div>
 

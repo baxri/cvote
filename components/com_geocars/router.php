@@ -37,13 +37,42 @@ jimport('joomla.application.categories');
  *
  * @return	array	The URL arguments to use to assemble the subsequent URL.
  */
+ 
+ function getCar($id){
+ 	$db = JFactory::getDBO();
+	$sql = 'select * from #__geocars_cars where id='.(int)$id;
+	$db->setQuery( $sql );	
+	return $db->loadObject();	
+ }
+ 
+  function getCategory($id){
+ 	$db = JFactory::getDBO();
+	$sql = 'select * from #__categories where id='.(int)$id;
+	$db->setQuery( $sql );	
+	return $db->loadObject();	
+ }
+  
+ function getCarByAlias($alias){
+ 	$db = JFactory::getDBO();
+	$sql = 'select * from #__geocars_cars where alias='.$db->Quote($alias);
+	$db->setQuery( $sql );	
+	return $db->loadObject();	
+ }
+
 function GeocarsBuildRoute(&$query)
 {
-
-
-
 	$segments = array();
-
+		
+	if( !empty($query['car']) ){
+		
+		$car = getCar($query['car']);
+		$category = getCategory( $car->catid );	
+		$segments = array($category->alias, $car->alias);
+		unset($query['car']);
+		return $segments;		
+	}
+	
+	
 	// get a menu item based on Itemid or currently active
 	$app	= JFactory::getApplication();
 	$menu	= $app->getMenu();
@@ -61,7 +90,7 @@ function GeocarsBuildRoute(&$query)
 	$menu_view	= (empty($menu_item->query['view'])) ? null : $menu_item->query['view'];
 	$menu_cat_id	= (empty($menu_item->query['catid'])) ? null : $menu_item->query['catid'];
 	$menu_id	= (empty($menu_item->query['id'])) ? null : $menu_item->query['id'];
-
+		
 	if (isset($query['view']))
 	{
 		$view = $query['view'];
@@ -236,7 +265,7 @@ function GeocarsBuildRoute(&$query)
 		}
 	};
 
-	d($segments);
+	
 	
 	return $segments;
 }
@@ -252,14 +281,16 @@ function GeocarsParseRoute($segments)
 	$vars = array();
 	// Get the request view as this is need for multi view parsing
 	$view = JRequest::getCmd('view', '');
-
+	
+	
+	
 	//Get the active menu item.
 	$app	= JFactory::getApplication();
 	$menu	= $app->getMenu();
 	$item	= $menu->getActive();
 	$params = JComponentHelper::getParams('com_geocars');
 	$advanced = $params->get('sef_advanced_link', 0);
-
+		
 	// Count route segments
 	$count = count($segments);
 
@@ -269,6 +300,21 @@ function GeocarsParseRoute($segments)
 		$vars['view']	= $segments[0];
 		$vars['id']		= $segments[$count - 1];
 		return $vars;
+	}
+	
+	if( $item->query['view'] == 'car' ){
+		
+		$segments[1] = str_replace(":", "-", $segments[1]);
+		$car = getCarByAlias( $segments[1] );		
+		
+		$vars['car'] = '';
+		
+		if( !empty($car->id) ){
+			$vars['car'] = $car->id;				
+		}
+		
+		$vars['view'] = 'car';							
+			return $vars;	
 	}
 	
 	if (!$advanced)

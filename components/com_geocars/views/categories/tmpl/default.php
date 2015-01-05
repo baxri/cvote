@@ -43,7 +43,8 @@ defined('_JEXEC') or die; ?>
 				</div>
 				
 				<div class="default_search">
-					<?php echo $this->model_list; ?>
+					<div id="search-result"><?php echo $this->model_list; ?></div>
+					<div id="search-loader" style="height: 34px; display: none; text-align: center; padding-top: 5px; padding-left: 60px;">იტვირთება ... </div>
 				</div>
 
 			</div>
@@ -52,7 +53,7 @@ defined('_JEXEC') or die; ?>
 			<br />
 
 			<div class="submit_div" style="margin: 0px auto;">
-				<input type="submit" class="btn btn-lg btn-primary disabled" id="geocars_default_submit" value="ძებნა"/>
+				<input style="border: solid 2px white !important;" type="submit" class="btn btn-lg btn-primary disabled" id="geocars_default_submit" value="ძებნა"/>
 			</div>
 
 			<input type="hidden" id="option" name="option" value="com_geocars" />

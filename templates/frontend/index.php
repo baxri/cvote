@@ -25,11 +25,15 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	
 	
 	<link rel="prefetch" href="<?php echo $tpath; ?>/images/zoom.png">
+	
+		
 	<meta property='fb:app_id' content='1499926956949411' />
+	<meta property="fb:admins" content="100003158703394"/>
 </head>
 
-<body>
-	<div class="navbar navbar-fixed-top" data-activeslide="1">
+<body onselectstart="return false;" style="-moz-user-select: none;">
+	<div class="navbar navbar-fixed-top" data-activeslide="1" style="border-bottom: solid 3px white;">
+				
 		<div class="container">
 		
 			<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -77,7 +81,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<jdoc:include type="component" />
 
 	<!-- === Slide 2 === -->
-	<div class="slide story" id="slide-2" data-slide="2">
+	<div class="slide story" id="slide-2" data-slide="2" style="border-top: 5px solid white;">
 		<div class="container">
 			<div class="row title-row">
 				<div class="col-12 font-thin">კმაყოფილი ხართ, <span class="font-semibold">თქვენი ავტომობილით</span> შეაფასე და დაეხმარე სხვას სასურველი ავტომობილის შერჩევაში.</div>
