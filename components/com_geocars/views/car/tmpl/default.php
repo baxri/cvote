@@ -81,7 +81,7 @@ defined('_JEXEC') or die;
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));</script>
 
-				<div  style="padding-top: 10px; margin: 0px auto; display: table; text-align: center;">
+				<div class="like_button_div"  style="padding-top: 10px; margin: 0px auto; display: table; text-align: center;">
 					<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flocalhost&amp;layout=button_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" style="overflow:hidden;width:100%;height:80px;" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.staubsauger-test.biz" class="fbook">www.staubsauger-test.biz</a></iframe>
 				</div>
 

@@ -43,7 +43,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 			<div class="nav-collapse collapse navbar-responsive-collapse">
 				<ul class="nav row">
 					<li data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">მთავარი</span></a></li>
-					<li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">ჩვენს შესახებ</span></a></li>
+					<li style="margin-right: 120px;" data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">როგორ გამოვიყენო აპლიკაცია?</span></a></li>
 					
 					<?php /* ?>
 					<li data-slide="4" class="col-12 col-sm-2"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">პროცესი</span></a></li>
@@ -85,9 +85,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
+			
+			<?php /* ?>
 			<div class="row subtitle-row">
 				<div class="col-12 font-thin">რაში გვეხმარება ეს <span class="font-semibold">აპლიკაცია</span></div>
 			</div><!-- /row -->
+			<?php */ ?>
+
 			<div class="row content-row">
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-eye-open"></i></p>

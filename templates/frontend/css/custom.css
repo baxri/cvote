@@ -71,10 +71,43 @@
 	margin-top: 20px;
 }
 
+.default_search{
+	float: left !important;
+	position: relative !important;
+}
+
+.selects_block{
+		width: 410px;
+}
+
+.default_search{
+	margin: 2px;
+}
+
 @media (min-width: 0px) and (max-width: 1000px) {
 	.vote-text{
-	font-size: 15pt;
-}
+		font-size: 15pt;
+	}
+
+	.votting-buttons button{
+		font-size: 9pt;
+	}
+
+	.like_button_div{
+		width: 230px;
+	}
+
+	.selects_block{
+		width: 220px;
+	}
+
+	#geocars_default_submit{
+		width: 200px;
+	}
+
+	.submit_div{
+		margin-left: -15px !important;
+	}
 }
 
 

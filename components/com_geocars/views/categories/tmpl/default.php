@@ -31,35 +31,49 @@ defined('_JEXEC') or die; ?>
 <form class="form-asd" role="form" action="" method="post" id="geocars_default_form">
 
 <!-- === MAIN Background === -->
-<div class="slide story" id="slide-1" data-slide="1">
-	<div class="container">
+<div class="inner_div slide " style="margin-bottom: 0px; padding-bottom: 70px; padding-top: 100px;"  data-slide="1">
 	
-		<div id="home-row-1" class="row clearfix" style="text-align: center;">
+	
+		<div id="home-row-1" class=" clearfix" style="text-align: center;">
 			
-			<div>
-			<?php echo $this->category_list; ?>
-			<br />
-			<?php echo $this->model_list; ?>
+			<div class="selects_block" style="margin: 0px auto; btext-align: center;">
+			
+				<div class="default_search">
+					<?php echo $this->category_list; ?>
+				</div>
+				
+				<div class="default_search">
+					<?php echo $this->model_list; ?>
+				</div>
+
 			</div>
 
-			<input type="submit" class="btn btn-lg btn-primary disabled" id="geocars_default_submit" value="ძებნა"/>
+			<div style="clear: both;"></div>
+			<br />
 
+			<div class="submit_div" style="margin: 0px auto;">
+				<input type="submit" class="btn btn-lg btn-primary disabled" id="geocars_default_submit" value="ძებნა"/>
+			</div>
 
 			<input type="hidden" id="option" name="option" value="com_geocars" />
 			<input type="hidden" id="task" name="task" value="goToModelPage" />
 		
 
-				<div class="col-12">
-				<h1 class="font-semibold">ავტომობილები <span class="font-thin">საქართველოში</span></h1>
-				<h4 class="font-thin">შეაფასეთ <span class="font-semibold">თქვენი ავტომობილი</span> და გაუზიარეთ სხვებს.</h4>
-				
-			</div><!-- /col-12 -->
+				<div style="padding-top: 50px; margin-bottom: 50px;" class="col-12">
+					<h1 class="font-semibold">ავტომობილები <span class="font-thin">საქართველოში</span></h1>
+					<h4 class="font-thin">შეაფასეთ <span class="font-semibold">თქვენი ავტომობილი</span> და გაუზიარეთ სხვებს.</h4>
+				</div><!-- /col-12 -->
+
+			<div class="home_votting_examples" style="margin: 0px auto; width: 320px;">
+				<div style="float: left;"><div c data-slide="4"><img src="images/s02.png"></div><span>უარყოფითი შეფასება</span></div>
+				<div style="margin-left: 10px;float: left;"><div data-slide="5"><img src="images/s03.png"></div><span>დადებითი შეფასება</span></div>
+			</div><!-- /row -->
+
+
+
 		</div><!-- /row -->
-		<div id="home-row-2" class="row clearfix">
-			<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="images/s02.png"></div><span>უარყოფითი შეფასება</span></div>
-			<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="images/s03.png"></div><span>დადებითი შეფასება</span></div>
-		</div><!-- /row -->
-	</div><!-- /container -->
+		
+	
 </div><!-- /slide1 -->
 
 </form>
