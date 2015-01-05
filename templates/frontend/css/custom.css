@@ -1,0 +1,118 @@
+
+.main_container{
+	text-align: center;
+}
+
+.image_block img{
+	width: 200px;
+}
+
+.car-page{
+	background-color: white;
+}
+
+.vote-text{
+	font-size: 25pt;
+	text-align: center;
+}
+
+.votting-buttons{
+	margin-top: 30px;
+}
+
+
+.car_image{
+	width: 50px;
+}
+
+.circle
+{
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	
+	color:#fff;
+	line-height:50px;
+	text-align:center;
+	background:white;
+	display: block;
+	float: left;
+}
+
+
+.inner_div{
+	
+	padding: 10px;
+	margin-bottom: 20px;
+	color: white;
+
+
+	background-image: url('../images/bg1.jpg');
+	color: #ffffff;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+	background-attachment: relative;
+	background-position: center center;
+}
+
+.car-page{
+	height: auto;
+}
+
+.write_your_comment{
+	margin-top: 20px;
+}
+
+.default_search{
+	float: left !important;
+	position: relative !important;
+}
+
+.selects_block{
+		width: 410px;
+}
+
+.default_search{
+	margin: 2px;
+}
+
+
+.like_button_div{
+	width: 270px;
+}
+
+@media (min-width: 0px) and (max-width: 1000px) {
+	.vote-text{
+		font-size: 15pt;
+	}
+
+	.votting-buttons button{
+		font-size: 9pt;
+	}
+
+	.like_button_div{
+		width: 240px;
+	}
+
+	.selects_block{
+		width: 220px;
+	}
+
+	#geocars_default_submit{
+		width: 200px;
+	}
+
+	.submit_div{
+		margin-left: -15px !important;
+	}
+}
+
+
