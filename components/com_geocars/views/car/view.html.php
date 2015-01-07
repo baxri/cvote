@@ -56,7 +56,7 @@ class GeocarsViewCar extends JView
 		
 		$this->page_suffix = 'car/'.$this->item->category_alias.'/'.$this->item->alias;
 		
-		$this->app_url = 'http://testdomain.ge';
+		$this->app_url = 'http://www.voteauto.ge';
 		$this->page_url = $this->app_url.'/'.$this->page_suffix;
 				
 		parent::display($tpl);
