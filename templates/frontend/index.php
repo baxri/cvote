@@ -1,5 +1,28 @@
 <?php defined( '_JEXEC' ) or die; 
 
+$view = JRequest::getVar("view");
+$db = JFactory::getDBO();
+
+$title_sufix = "";
+
+if( $view == "car" ){
+	$car = JRequest::getVar("car");
+
+	$sql = 'select * from #__geocars_cars where id='.(int)$car.' limit 1';
+	$db->setQuery( $sql );
+	$car = $db->loadObject();
+	
+	$sql = 'select * from #__categories where id='.$car->catid = 'limit 1';
+	$db->setQuery( $sql );	
+	$category = $db->loadObject();	
+
+	if( !empty( $category ) || !empty( $car ) )
+
+	$title_sufix = " - ";
+	$title_sufix .= $category->title." ".$car->name;
+
+}
+
 include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 ?><!doctype html>
@@ -8,10 +31,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<title>ავტომობილები საქართველოში</title> 
-	<meta name="description" content="ავტომანქანები საქართველოში" />	    
+	<title>შეაფასე ავტომობილი <?php echo $title_sufix ?> </title> 
+	<meta name="description" content="გამოთქვი შენი მოსაზრება, მიეცი ხმა და დაეხმარე სხვებს სასურველი ავტომობილის შერჩევაში" />	    
 	<meta name="keywords" content="ავტომობილი, საქართველო, შეფასება, კმაყოფილი, დისკუსია, კომენტარი">
 	<meta property="og:title" content="">
+
+
 
 	<link rel="stylesheet" type="text/css" href="<?php echo $tpath; ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo $tpath; ?>/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
@@ -200,6 +225,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<!-- === Slide 6 / Contact === -->
 	<div class="slide story" id="slide-6" data-slide="6">
 		<div class="container">
+			
+
+
+		<jdoc:include type="modules" name="login_module_position" />
+
+
 			<div class="row title-row">
 				<div class="col-12 font-light"საკონტაქტო  <span class="font-semibold">ინფორმაცია</span></div>
 			</div><!-- /row -->
@@ -238,6 +269,16 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 		</div><!-- /container -->
 	</div><!-- /Slide 6 -->
 	
+	<!-- TOP.GE COUNTER CODE -->
+	<script language="JavaScript" type="text/javascript" src="http://counter.top.ge/cgi-bin/cod?100+98312"></script>
+	<noscript>
+	<a target="_top" href="http://counter.top.ge/cgi-bin/showtop?98312">
+	<img src="http://counter.top.ge/cgi-bin/count?ID:98312+JS:false" border="0" alt="TOP.GE" /></a>
+	</noscript>
+	<!-- / END OF COUNTER CODE -->
+
+	
+
 </body>
 
 	<!-- SCRIPTS -->
@@ -267,5 +308,35 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	
 	});
 	</script>
+
+	
+
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-58459928-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<script>
+		window.fbAsyncInit = function() {
+		FB.init({appId: '1499926956949411', status: true, cookie: true,
+		xfbml: true});
+		};
+		(function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		'//connect.facebook.net/ka_GE/all.js';
+		document.getElementById('fb-root').appendChild(e);
+		}());
+	</script>
+
+
+	
 
 </html>

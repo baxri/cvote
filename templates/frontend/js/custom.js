@@ -14,13 +14,35 @@ $(document).ready(function(){
 		
 	});*/
 	
-	document.oncontextmenu = function(){return false;};
-	document.onselectstart= function() {return false;}; 
+	//document.oncontextmenu = function(){return false;};
+	//document.onselectstart= function() {return false;}; 
 	
 	/*
 	* Reset dearch dropdowns after page refresh
 	*
 	*/
+
+
+	$(document).ready(function(){
+
+			$('#share_button').click(function(e){
+
+				e.preventDefault();
+				FB.ui(
+				{
+				method: 'feed',
+				name: $(this).attr("data-name"),
+				link: $(this).attr("data-link"),
+				//picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+				caption: $(this).attr("data-caption"),
+				description: $(this).attr("data-description"),
+				message: ''
+				});
+
+				return false;
+			});
+		});
+
 
 	$("#category").val("");
 	$("#model").val("");

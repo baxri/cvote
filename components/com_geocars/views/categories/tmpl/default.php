@@ -47,6 +47,8 @@ defined('_JEXEC') or die; ?>
 					<div id="search-loader" style="height: 34px; display: none; text-align: center; padding-top: 5px; padding-left: 60px;">იტვირთება ... </div>
 				</div>
 
+				<div id="fb-root"></div>
+
 			</div>
 
 			<div style="clear: both;"></div>
@@ -60,8 +62,9 @@ defined('_JEXEC') or die; ?>
 			<input type="hidden" id="task" name="task" value="goToModelPage" />
 		
 
-				<div style="padding-top: 50px; margin-bottom: 50px;" class="col-12">
+				<div style="height: 200px; padding-top: 1px; margin-bottom: 50px;" class="col-12">
 					<h1 class="font-semibold">ავტომობილები <span class="font-thin">საქართველოში</span></h1>
+					<br /><br /><br />
 					<h4 class="font-thin">შეაფასეთ <span class="font-semibold">თქვენი ავტომობილი</span> და გაუზიარეთ სხვებს.</h4>
 				</div><!-- /col-12 -->
 

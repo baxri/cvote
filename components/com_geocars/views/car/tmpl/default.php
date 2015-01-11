@@ -27,11 +27,15 @@
  */
 
 defined('_JEXEC') or die;
+
 ?>
 
 
 <!-- === MAIN Background === -->
 <div class="car-page">
+
+
+	
 
 	<div class="main_container" style="width: auto; padding: 20px; padding-top: 60px;">
 
@@ -71,17 +75,14 @@ defined('_JEXEC') or die;
 				<p>თქვენ კმაყოფილი ხართ ამ ავტომობილით?</p>
 
 				<div class="votting-buttons btn-group" role="group" aria-label="...">
+				  				  <button type="button" data-carid="<?php echo $this->item->id ?>" id="success-vote" class="btn btn-primary <?php echo !empty($this->voted->id) ? 'disabled' : '' ?>">კმაყოფილი ვარ</button>
 				  <button type="button" data-carid="<?php echo $this->item->id ?>" id="danger-vote" class="btn btn-danger <?php echo !empty($this->voted->id) ? 'disabled' : '' ?>">არ ვარ კმაყოფილი</button>
-				  <button type="button" data-carid="<?php echo $this->item->id ?>" id="success-vote" class="btn btn-primary <?php echo !empty($this->voted->id) ? 'disabled' : '' ?>">კმაყოფილი ვარ</button>
+
 				</div>
 
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = "//connect.facebook.net/ka_GE/sdk.js#xfbml=1&appId=1499926956949411&version=v2.0";
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
+				<div id="fb-root"></div>
+
+				
 
 				<div class="like_button_div"  style="padding-top: 10px; margin: 0px auto; display: table; text-align: center;">
 					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo $this->page_url ?>&amp;layout=button_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" style="overflow:hidden;width:100%;height:80px;" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.staubsauger-test.biz" class="fbook">www.staubsauger-test.biz</a></iframe>
@@ -89,8 +90,11 @@ defined('_JEXEC') or die;
 
 				<br />
 				<br />
-				<div class="fb-share-button" data-href="<?php echo $this->page_url ?>" data-layout="button"></div>
-
+				
+				<div class="fb-share-button"
+				data-href="<?php echo $this->page_url ?>"
+				data-layout="button_count"
+				></div>
 
 				
 			</div>
@@ -113,13 +117,12 @@ defined('_JEXEC') or die;
 		
 
 		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/ka_GE/all.js#xfbml=1"></script>
+		
 		<fb:comments href="<?php echo $this->page_url ?>" data-width="100%"></fb:comments>
 
 	</div>
 
 </div><!-- /slide1 -->
-
 
 
 
