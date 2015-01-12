@@ -1,34 +1,32 @@
-<?php defined( '_JEXEC' ) or die; 
-
+<?php defined( '_JEXEC' ) or die;  
 include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
-?><!doctype html>
+?>
+<!doctype html>
 <html>
 <head lang="en">
+	
+	<jdoc:include type="head" />	
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
-	<title>ავტომობილები საქართველოში</title> 
-	<meta name="description" content="ავტომანქანები საქართველოში" />	    
+	<meta name="description" content="გამოთქვი შენი მოსაზრება, მიეცი ხმა და დაეხმარე სხვებს სასურველი ავტომობილის შერჩევაში" />	    
 	<meta name="keywords" content="ავტომობილი, საქართველო, შეფასება, კმაყოფილი, დისკუსია, კომენტარი">
 	<meta property="og:title" content="">
+	<meta property='fb:app_id' content='1499926956949411' />
+	<meta property="fb:admins" content="100003158703394"/>
+	
 
 	<link rel="stylesheet" type="text/css" href="<?php echo $tpath; ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo $tpath; ?>/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="<?php echo $tpath; ?>/css/font-awesome.min.css" rel="stylesheet">
-	
+    <link rel="stylesheet" href="<?php echo $tpath; ?>/css/font-awesome.min.css" rel="stylesheet">	
 	<link rel="stylesheet" type="text/css" href="<?php echo $tpath; ?>/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="<?php echo $tpath; ?>/css/custom.css">
 
-
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	
-	
 	<link rel="prefetch" href="<?php echo $tpath; ?>/images/zoom.png">
 	
-		
-	<meta property='fb:app_id' content='1499926956949411' />
-	<meta property="fb:admins" content="100003158703394"/>
+	
 </head>
 
 <body onselectstart="return false;" style="-moz-user-select: none;">
@@ -53,7 +51,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 					<li data-slide="4" class="col-12 col-sm-2"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">პროცესი</span></a></li>
 					<li data-slide="5" class="col-12 col-sm-2"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-heart"></span> <span class="text">კლიენტები</span></a></li>
 					<?php */ ?>
-					<li data-slide="6" class="col-12 col-sm-2"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">კონტაქტი</span></a></li>
+					<li data-slide="6" class="col-12 col-sm-2"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">ავტორიზაცია</span></a></li>
 				
 
 				</ul>
@@ -200,6 +198,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<!-- === Slide 6 / Contact === -->
 	<div class="slide story" id="slide-6" data-slide="6">
 		<div class="container">
+			
+
+
+		<jdoc:include type="modules" name="login_module_position" />
+
+
 			<div class="row title-row">
 				<div class="col-12 font-light"საკონტაქტო  <span class="font-semibold">ინფორმაცია</span></div>
 			</div><!-- /row -->
@@ -238,6 +242,10 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 		</div><!-- /container -->
 	</div><!-- /Slide 6 -->
 	
+	
+
+	
+
 </body>
 
 	<!-- SCRIPTS -->
@@ -248,7 +256,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	<script type="text/javascript" src="<?php echo $tpath; ?>/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
 	<script src="<?php echo $tpath; ?>/js/script.js"></script>
 	<script src="<?php echo $tpath; ?>/js/custom.js"></script>
-	<script src="<?php echo $tpath; ?>/js/bootstrap.min.js"></script>
+	<!--<script src="<?php echo $tpath; ?>/js/bootstrap.min.js"></script> -->
 
 	<!-- fancybox init -->
 	<script>
@@ -267,5 +275,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 	
 	});
 	</script>
+
+	
+
+
+	
+	
 
 </html>

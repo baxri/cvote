@@ -31,6 +31,7 @@
 	</files>
 	
 	<positions><!-- define the positions for modules here -->
+		<position>login_module_position</position>
 		<position>debug</position>
 	</positions>
 	

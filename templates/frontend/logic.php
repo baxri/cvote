@@ -13,7 +13,7 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
 $this->setGenerator(null);
 
 // template js
-$doc->addScript($tpath.'/js/logic.js');
+//$doc->addScript($tpath.'/js/logic.js');
 
 // template css
-$doc->addStyleSheet($tpath.'/css/template.css.php');
+//$doc->addStyleSheet($tpath.'/css/template.css.php');

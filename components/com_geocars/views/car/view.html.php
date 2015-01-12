@@ -30,24 +30,20 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
-/**
- * HTML Car View class for the Cars In Georgia component
- *
- */
-
 class GeocarsViewCar extends JView
 {
 	
 	function display($tpl = null)
 	{
-		// Initialise variables.
+		
+		$this->doc = JFactory::getDocument();
 		$app		= JFactory::getApplication();
 		$user		= JFactory::getUser();
 		$model = $this->getModel();
 		$car_id = (int)JRequest::getVar("car");
 
 		$this->item = $model->getItem($car_id);
-		
+
 		if(empty( $this->item )){
 			$app->redirect("index.php");
 		}
@@ -58,7 +54,10 @@ class GeocarsViewCar extends JView
 		
 		$this->app_url = 'http://www.voteauto.ge';
 		$this->page_url = $this->app_url.'/'.$this->page_suffix;
-				
+		
+		JFactory::getDocument()->setTitle(' შეაფასე ავტომობილი  - '.$this->item->category_title.' '.$this->item->name );
+		
+		
 		parent::display($tpl);
 	}
 
