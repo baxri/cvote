@@ -89,7 +89,9 @@ defined('_JEXEC') or die;
 
 				<br />
 				<br />
-				<div class="fb-share-button" data-href="<?php echo $this->page_url ?>" data-layout="button"></div>
+				
+				
+				<div class="fb-share-button" og:title="Test" data-href="<?php echo $this->page_url ?>" data-layout="button"></div>
 
 
 				
