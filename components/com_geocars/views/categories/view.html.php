@@ -77,10 +77,7 @@ class GeocarsViewCategories extends JView
 		$this->assignRef('parent',		$parent);
 		$this->assignRef('children',	$children);
 
-		$this->_prepareDocument();
-
 		$options = array();
-
 		$options[] = JHTML::_('select.option', '', 'აირჩიეთ მწარმოებელი' );
 
 		foreach($children[$parent->id] as $id => $child):
@@ -96,71 +93,5 @@ class GeocarsViewCategories extends JView
 		$this->model_list = JHTML::_('select.genericlist', $options, 'model', ' class="inputbox form-control" style="width: 200px;"  ', 'value', 'text' );
 		
 		parent::display($tpl);
-	}
-
-	/**
-	 * Prepares the document
-	 */
-	protected function _prepareDocument()
-	{
-		$app	= JFactory::getApplication();
-		$menus	= $app->getMenu();
-		$lang	= JFactory::getLanguage();		
-		$title	= null;
-
-		// Because the application sets a default page title,
-		// we need to get it from the menu item itself
-		$menu = $menus->getActive();
-		if ($menu)
-		{
-			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
-		}
-		else
-		{
-			$this->params->def('page_heading', JText::_('COM_GEOCARS_CATEGORIES_LABEL'));
-		}
-		$title = $this->params->get('page_title', '');
-		if (empty($title))
-		{
-			$title = htmlspecialchars_decode($app->getCfg('sitename'));
-		}
-		else
-		{
-			if ($app->getCfg('sitename_pagetitles', 0))
-			{
-				$title = JText::sprintf('JPAGETITLE', htmlspecialchars_decode($app->getCfg('sitename')), $title);
-			}
-		}
-		$this->document->setTitle($title);
-		
-		// Get Menu Item meta description, Keywords and robots instruction to insert in page header
-		
-		if ($this->params->get('menu-meta_description'))
-		{
-			$this->document->setDescription($this->params->get('menu-meta_description'));
-		}
-
-		if ($this->params->get('menu-meta_keywords'))
-		{
-			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
-		}
-
-		if ($this->params->get('robots'))
-		{
-			$this->document->setMetadata('robots', $this->params->get('robots'));
-		}	
-		
-		// Add css files for the geocars component and categories if they exist
-		$this->document->addStyleSheet(JUri::root()."components/com_geocars/assets/css/geocars.css");
-		$this->document->addStyleSheet(JUri::root()."components/com_geocars/assets/css/categories.css");
-	
-		if ($lang->isRTL())
-		{
-			$this->document->addStyleSheet(JUri::root()."components/com_geocars/assets/css/geocars-rtl.css");
-			$this->document->addStyleSheet(JUri::root()."components/com_geocars/assets/css/categories-rtl.css");
-		}
-		
-		// Include Helpers
-		JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');					
 	}
 }

@@ -37,7 +37,7 @@ defined('_JEXEC') or die('(@)|(@)');
 
     <?php if (count($plugins)): ?>
 	    <?php foreach($plugins as $link): ?>
-	            <a href="<?php echo JRoute::_($link['link']);?>"><span class="<?php echo $link['class'];?>">&nbsp;</span></a>
+	            <a href="<?php echo JRoute::_($link['link']);?>"><span class="<?php echo $link['class'];?>"></span></a>
 	        <?php endforeach; ?>
     <?php endif; ?>
 
@@ -51,7 +51,7 @@ defined('_JEXEC') or die('(@)|(@)');
 	</div>
 <?php endif; ?>
 <?php if ($params->get('show_login_form')): ?>
-<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" >
+<form action="index.php" method="post" id="login-form" >
 	<fieldset class="userdata">
 	<p id="form-login-username">
 		<label for="modlgn-username"><?php echo JText::_('MOD_SLOGIN_VALUE_USERNAME') ?></label>

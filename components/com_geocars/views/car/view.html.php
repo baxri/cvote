@@ -35,6 +35,7 @@ class GeocarsViewCar extends JView
 	
 	function display($tpl = null)
 	{
+		
 		$this->doc = JFactory::getDocument();
 		$app		= JFactory::getApplication();
 		$user		= JFactory::getUser();
@@ -54,8 +55,9 @@ class GeocarsViewCar extends JView
 		$this->app_url = 'http://www.voteauto.ge';
 		$this->page_url = $this->app_url.'/'.$this->page_suffix;
 		
-		JFactory::getDocument()->setTitle('Set your title here');
-
+		JFactory::getDocument()->setTitle(' შეაფასე ავტომობილი  - '.$this->item->category_title.' '.$this->item->name );
+		
+		
 		parent::display($tpl);
 	}
 

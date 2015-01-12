@@ -43,8 +43,6 @@ $plugins = array();
 
 $dispatcher->trigger('onCreateLink', array(&$plugins, $callbackUrl));
 
-d( $plugins );
-
 if($loadAfter == 1){
     ob_start();
     require JModuleHelper::getLayoutPath('mod_slogin', $params->get('layout', 'default'));

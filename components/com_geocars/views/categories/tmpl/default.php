@@ -47,8 +47,6 @@ defined('_JEXEC') or die; ?>
 					<div id="search-loader" style="height: 34px; display: none; text-align: center; padding-top: 5px; padding-left: 60px;">იტვირთება ... </div>
 				</div>
 
-				<div id="fb-root"></div>
-
 			</div>
 
 			<div style="clear: both;"></div>

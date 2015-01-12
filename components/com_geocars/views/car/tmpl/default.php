@@ -80,7 +80,7 @@ defined('_JEXEC') or die;
 
 				</div>
 
-				<div id="fb-root"></div>
+				
 
 				
 
@@ -90,11 +90,12 @@ defined('_JEXEC') or die;
 
 				<br />
 				<br />
-				
+
 				<div class="fb-share-button"
 				data-href="<?php echo $this->page_url ?>"
 				data-layout="button_count"
 				></div>
+
 
 				
 			</div>
