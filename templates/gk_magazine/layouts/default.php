@@ -62,7 +62,7 @@ $tpl_page_suffix = $this->page_suffix != '' ? ' class="'.$this->page_suffix.'"' 
     <section id="gkPageTop">
     	<div class="gkPage">                    	
 		    <?php $this->layout->loadBlock('logo'); ?>
-		    
+		   	
 		    <?php if($this->API->modules('bannertop')) : ?>
 		    <div id="gkBannerTop">
 		    	<jdoc:include type="modules" name="bannertop" style="<?php echo $this->module_styles['bannertop']; ?>" />

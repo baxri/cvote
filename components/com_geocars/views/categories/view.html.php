@@ -78,7 +78,7 @@ class GeocarsViewCategories extends JView
 		$this->assignRef('children',	$children);
 
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'აირჩიეთ მწარმოებელი' );
+		$options[] = JHTML::_('select.option', '', 'მწარმოებელი' );
 
 		foreach($children[$parent->id] as $id => $child):
 			$options[] = JHTML::_('select.option', $this->escape($child->id), $this->escape($child->title) );
@@ -89,7 +89,7 @@ class GeocarsViewCategories extends JView
 
 		$options = array();
 
-		$options[] = JHTML::_('select.option', '', 'აირჩიეთ მოდელი' );
+		$options[] = JHTML::_('select.option', '', 'მოდელი' );
 		$this->model_list = JHTML::_('select.genericlist', $options, 'model', ' class="inputbox form-control" style="width: 200px;"  ', 'value', 'text' );
 		
 		parent::display($tpl);
