@@ -62,7 +62,7 @@ $tpl_page_suffix = $this->page_suffix != '' ? ' class="'.$this->page_suffix.'"' 
     <section id="gkPageTop">
     	<div class="gkPage">                    	
 		    <?php $this->layout->loadBlock('logo'); ?>
-		    
+		   	
 		    <?php if($this->API->modules('bannertop')) : ?>
 		    <div id="gkBannerTop">
 		    	<jdoc:include type="modules" name="bannertop" style="<?php echo $this->module_styles['bannertop']; ?>" />
@@ -204,5 +204,40 @@ $tpl_page_suffix = $this->page_suffix != '' ? ' class="'.$this->page_suffix.'"' 
 	<div id="gkPopupOverlay"></div>
 		
 	<jdoc:include type="modules" name="debug" />
+	
+		<!-- TOP.GE COUNTER CODE -->
+	<script language="JavaScript" type="text/javascript" src="http://counter.top.ge/cgi-bin/cod?100+98312"></script>
+	<noscript>
+	<a target="_top" href="http://counter.top.ge/cgi-bin/showtop?98312">
+	<img src="http://counter.top.ge/cgi-bin/count?ID:98312+JS:false" border="0" alt="TOP.GE" /></a>
+	</noscript>
+	<!-- / END OF COUNTER CODE -->
+	
+		<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-58459928-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<div id="fb-root"></div>
+	<script>
+		window.fbAsyncInit = function() {
+		FB.init({appId: '1499926956949411', status: true, cookie: true,
+		xfbml: true});
+		};
+		(function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		'//connect.facebook.net/ka_GE/all.js';
+		document.getElementById('fb-root').appendChild(e);
+		}());
+	</script>
+
+	
 </body>
 </html>
