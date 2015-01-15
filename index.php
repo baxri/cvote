@@ -25,7 +25,7 @@ if( !in_array($_SERVER['REMOTE_ADDR'], array(
 
 											)) )
 {
-	die("Under Construction...");
+	//die("Under Construction...");
 }
 
 
