@@ -40,6 +40,8 @@ require_once JPATH_COMPONENT.'/helpers/geocars.php';
 $doc->addScript( "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" );
 $doc->addScript(JURI::root().'components/com_geocars/assets/js/custom.js');
 
+$doc->addStyleSheet(JURI::root().'components/com_geocars/assets/css/custom.css');
+
 $controller = JController::getInstance('Geocars');
 
 $controller->execute(JRequest::getCmd('task'));

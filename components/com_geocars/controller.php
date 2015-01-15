@@ -203,5 +203,32 @@ class GeocarsController extends JController
 			exit;
 		}
 	}
+	
+	public function addOpinion(){
+		try{
+			
+			$opinion = Jrequest::getVar('opinion');
+			$model = $this->getModel('opinion');
+						
+			$response = new stdClass();
+			
+			$model->addOpinion( $opinion );
+			
+			
+			$response->code = 0;
+			$response->text = 'success';
+			
+			echo json_encode($response);
+			exit;
+
+		}catch( Exception $e ){
+			$response = new stdClass();
+			$response->code = 500;
+			$response->text = $e->getMessage();
+			
+			echo json_encode($response);
+			exit;
+		}
+	}	
 
 }

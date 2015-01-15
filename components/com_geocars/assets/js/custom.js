@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 	
+	
+	
+	
 	/*
 	* Set listener if someone comentts on my web pag please note me
 	*
@@ -182,8 +185,8 @@ $(document).ready(function(){
 	    // Animation complete.
 	  });
 	});
-
 	
+		
 
 });
 

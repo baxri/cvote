@@ -1,5 +1,13 @@
 
 
+#detail_info_body{
+	display: none;
+}
+
+.add_opinion_block{
+	display: none;
+}
+
 .search-loader {
 	display: none;
 }
