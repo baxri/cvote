@@ -33,7 +33,10 @@ defined('_JEXEC') or die;
  *
  */
 class GeocarsController extends JController
-{
+{	
+
+	private $car_item_id = 118;
+
 	/**
 	 * @var		string	The default view.
 	 */
@@ -122,6 +125,7 @@ class GeocarsController extends JController
 
 	/*
 	* Redirect to Car page
+	* goToModelPage
 	*
 	*/
 
@@ -138,14 +142,41 @@ class GeocarsController extends JController
 			if( empty($model) )
 				throw new Exception("მოდელი არ არის არჩეული");
 			
-			$this->setRedirect(JRoute::_("index.php?option=com_geocars&car=".$model."&Itemid=118", false));
-
+			$this->setRedirect(JRoute::_("index.php?option=com_geocars&car=".$model."&Itemid=".$this->car_item_id, false));
+			return;
 
 		}catch( Exception $e ){
 			$this->setRedirect("index.php");
+			return;
 		}
 
 	}
+
+	/*
+	* Add users opinion
+	* addOpinion
+	*
+	*/
+
+	public function addOpinion(){
+		
+		$post = Jrequest::get('posy');
+
+		$url = JRoute::_("index.php?option=com_geocars&car=".$post['car_id']."&Itemid=".$this->car_item_id, false);
+		
+		try{
+
+			$model = $this->getModel('opinion');
+			$model->addOpinion( $post );
+			$this->setRedirect( $url, 'თქვენი მოსაზრება წარმატებით დაემატა', 'success' );
+			return;
+
+		}catch( Exception $e ){
+			
+			$this->setRedirect( $url, $e->getMessage(), 'error' );
+			return;
+		}
+	}	
 
 	public function voteSuccess(){
 		try{
@@ -204,31 +235,6 @@ class GeocarsController extends JController
 		}
 	}
 	
-	public function addOpinion(){
-		try{
-			
-			$opinion = Jrequest::getVar('opinion');
-			$model = $this->getModel('opinion');
-						
-			$response = new stdClass();
-			
-			$model->addOpinion( $opinion );
-			
-			
-			$response->code = 0;
-			$response->text = 'success';
-			
-			echo json_encode($response);
-			exit;
-
-		}catch( Exception $e ){
-			$response = new stdClass();
-			$response->code = 500;
-			$response->text = $e->getMessage();
-			
-			echo json_encode($response);
-			exit;
-		}
-	}	
+	
 
 }

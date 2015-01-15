@@ -1,30 +1,5 @@
 <?php
-/**
- * @version 		$Id:$
- * @name			Cars In Georgia (Release 1.0.0)
- * @author			Giorgi Bibilashvili ()
- * @package			com_geocars
- * @subpackage		com_geocars.site
- * @copyright		
- * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
- * 
- * The following Component Architect header section must remain in any distribution of this file
- *
- * @CAversion		Id: compobject.php 424 2014-10-23 14:08:27Z BrianWade $
- * @CAauthor		Component Architect (www.componentarchitect.com)
- * @CApackage		architectcomp
- * @CAsubpackage	architectcomp.site
- * @CAtemplate		joomla_2_5_standard (Release 1.0.4)
- * @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
- * @Joomlacopyright Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved.
- * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
- * 
- * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- */
+
 
 defined('_JEXEC') or die;
 
@@ -738,6 +713,33 @@ class GeocarsModelCar extends JModelItem
 
     	$result = $db->loadObject();
 		return $result;
+    }
+
+    public function getOpinions( $car ){
+
+    	$lim	= 5; 
+		$lim0	= JRequest::getVar('limitstart', 0, '', 'int');
+
+    	$db = JFactory::getDBO();
+
+    	$sql = 'select * 
+    				from #__geocars_opinions as op
+    				left join #__users as u on u.id = op.user_id 
+    					where op.car_id='.(int)$car
+    					.' order by op.id desc';
+
+    	$db->setQuery( $sql );
+
+    	jimport('joomla.html.pagination');
+    	$pageNav = new JPagination( $db->loadObjectList(), $lim0, $lim );
+
+
+
+    	$result = $db->loadObjectList();
+
+    	return $result;
+    	
+
     }
 
 }

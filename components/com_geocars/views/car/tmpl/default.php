@@ -37,7 +37,7 @@
 				data-layout="button_count"
 				></div>
 
-				
+
 			</div>
 			
 			<div class="cls"></div>
@@ -45,17 +45,6 @@
 
 		</div>
 
-		<div>
-			<a href="javascript:void(0)" id="detail_info">დეტალური</a>
-			<div id="detail_info_body">
-				<?php if(!empty( $this->item->description )): ?>
-					<?php echo $this->item->description; ?>
-				<?php else: ?>
-					ინფორმაცია ჯერ არ არის წარმოდგენილი
-				<?php endif; ?>
-			</div>
-		</div>
-		
 		
 		<?php if( !empty( $this->user->id ) ): ?>
 			<a id="open_add_opinion_dialog" href="javascript:void(0)">დაამატე</a> მოსაზრება მომხმარებლით: <?php echo $this->user->name ?>
@@ -74,7 +63,7 @@
 			<textarea name="opinion" id="opinion"></textarea>
 			<button id="add_opinion_but">დაამატე შენი მოსაზრება</button>	
 			
-			<input type="hidden" name="car_id" value="<?php echo $this->car_id ?>" />
+			<input type="hidden" name="car_id" value="<?php echo $this->item->id ?>" />
 			<input type="hidden" name="task" value="addOpinion" />
 			<input type="hidden" name="option" value="<?php echo $this->option ?>" />
 			
@@ -82,11 +71,20 @@
 	
 	</div>
 
-		
-		<div id="opinions_block">
-			<!-- Loads users Opinions -->
-		</div>
 
+	<?php if( !empty( $this->opinions ) ): ?>
+		<?php foreach( $this->opinions as $key=>$value ): ?>
+			<div>
+				<?php echo $value->opinion ?>
+			</div>
+		<?php endforeach;; ?>
+	<?php else: ?>
+		<div>მოცემულ ავტომობილზე არავის გამოუთქვამს მოსაზრება</div>
+		<div>იყავი პირველი და დააფიქსირე შენი აზრი</div>
+	<?php endif; ?>
+				
+		
+		
 		<?php /* ?>
 		<div id="fb-root"></div>	
 		<fb:comments href="<?php echo $this->page_url ?>" data-width="100%"></fb:comments>
@@ -110,28 +108,10 @@ $this->doc->addScriptDeclaration('
 			return false;		
 		} );
 		
-		$( "#add_opinion_form" ).bind( "submit", function() {
-		 	
-			var value = $("#opinion").val();
-		 		
-	 		if( value.length <= 0 ){
-	 			return false;
-	 		}
-			
-		 	$.post( "index.php", $( "#add_opinion_form" ).serialize(), function( data ){
-		 		
-		 		data = $.parseJSON(data);
-		 		
-		 		if( data.code == 0 ){
-		 			$("#add_opinion_block").slideUp();
-		 		}
-		 		
-		 	} );
-		 	
-		 	return false;
-		});
 				
 	});
+
+	
 
 ');
 
