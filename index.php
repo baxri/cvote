@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @package		Joomla.Site
