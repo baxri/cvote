@@ -70,8 +70,7 @@
 		</form>
 	
 	</div>
-
-
+	
 	<div class="opinions-list">
 		<?php if( !empty( $this->opinions ) ): ?>
 			<?php foreach( $this->opinions as $key=>$value ): ?>
