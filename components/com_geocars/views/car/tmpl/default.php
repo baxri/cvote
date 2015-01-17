@@ -72,17 +72,18 @@
 	</div>
 
 
-	<?php if( !empty( $this->opinions ) ): ?>
-		<?php foreach( $this->opinions as $key=>$value ): ?>
-			<div>
-				<?php echo $value->opinion ?>
-			</div>
-		<?php endforeach;; ?>
-	<?php else: ?>
-		<div>მოცემულ ავტომობილზე არავის გამოუთქვამს მოსაზრება</div>
-		<div>იყავი პირველი და დააფიქსირე შენი აზრი</div>
-	<?php endif; ?>
-				
+	<div class="opinions-list">
+		<?php if( !empty( $this->opinions ) ): ?>
+			<?php foreach( $this->opinions as $key=>$value ): ?>
+				<div>
+					<?php echo $value->opinion ?>
+				</div>
+			<?php endforeach;; ?>
+		<?php else: ?>
+			<div>მოცემულ ავტომობილზე არავის გამოუთქვამს მოსაზრება</div>
+			<div>იყავი პირველი და დააფიქსირე შენი აზრი</div>
+		<?php endif; ?>
+	</div>			
 		
 		
 		<?php /* ?>
