@@ -1,0 +1,14 @@
+L.THEME (http://ltheme.com) - Joomla! & Wordpress template
+
+Install instruction
+
+Unzip template package, you will have 2 sub packages:
+
+1/ Template Install package: Install it via Extension Manager.
+2/ Helix template framework: Install it via Extension Manager.
+
+After installed above packages, you go to Admin > Extension > PLugin Manager,
+search for plugin name 'helix' and enable it.
+
+If you have any questions, just post at http://ltheme.com/support/
+Thanks for choosing our product!
