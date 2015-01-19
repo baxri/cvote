@@ -128,7 +128,6 @@ $(document).ready(function(){
 		if( !$("#geocars_default_submit").hasClass("disabled") ){
 			//Continue submiting form
 		}else{
-			alert("Choose Items");
 			return false;
 		}
 

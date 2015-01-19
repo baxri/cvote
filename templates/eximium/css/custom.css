@@ -1,0 +1,58 @@
+
+#detail_info_body{
+	display: none;
+}
+
+.add_opinion_block{
+	display: none;
+}
+
+#search-loader {
+	display: none;
+}
+
+/*
+*	@ Home Page Component Styles 
+*	
+*/
+
+.primary-search-btn{
+	width: 200px !important;
+}
+
+.default_search{
+	margin: 5px;
+}
+
+.default_search_text{
+	font-size: 12pt;
+	color: lightgray;
+}
+
+.search-block{
+	border-top: 5px solid lightgray;
+}
+
+.userdata{
+	margin-top: 20px;
+}
+
+.geocars_login input{
+	height: 30px !important;
+}
+
+
+
+@media all and (max-width: 1000px) and (min-width: 0px) {
+  	
+  	.search-block{
+		text-align: center;
+	}
+
+	.geocars_login{
+		text-align: center;
+	}
+
+}
+
+

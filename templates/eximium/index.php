@@ -27,6 +27,10 @@ require( YJSGCORE_PATH );/* YJSGFramework main functions*/
 <html xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>"  dir="<?php echo $this->direction; ?>" class="<jdoc:include type="htmlclass" />">
 <head>
 <?php require( YJSG_HEAD );/* <head> files containing css , js and conditions */?>
+
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/custom.css" type="text/css" media="screen, projection" />
+		
+
 </head>
 <body id="stylef<?php echo $default_font_family ?>" class="yjsgbody style_<?php echo $css_file.$browserClassName.$rtlClass ?>">
 	<div id="centertop" class="centered yjsgsitew">
