@@ -1,0 +1,64 @@
+
+body.all{ background:url(../images/body/bg.gif) center 0 repeat}
+
+#wrapper{ background:url(../images/body/bg_spot.png) center 0 no-repeat ; position:relative;}
+
+strong{ color:#fff}
+
+.bg_top { position:absolute; width:100%; height:189px;
+  min-width: 980px; background:url(../images/body/bg_top.jpg) center 0 repeat-x}
+.bg_top.home{ height:671px;}
+
+/*=== COLOR VARIABLES ===*/
+/*=== DRAWER POSITION ===*/
+/*=== TOP POSITION ===*/
+/*=== HEADER POSITION ===*/
+/*=== SHOWCASE POSITION ===*/
+/*=== FEATURE POSITION ===*/
+/*=== UTILITY POSITION ===*/
+/*=== MAINTOP POSITION ===*/
+/*=== CONTENT ===*/
+/*== Portfolio Page ==*/
+#port div.itemExtraFields {
+  border-color: #47484b;
+}
+/*== Contacts Page ==*/
+#contact-form-cont div.contact-form {
+  border-right: 1px solid #47484b;
+}
+/*== User Profile ==*/
+div.profile dl {
+  border-bottom: 1px solid #47484b;
+}
+/*== Search Page ==*/
+div.component-content > div.search #searchForm div.form-limit-and-counter {
+  border-top: 1px solid #47484b;
+  border-bottom: 1px solid #47484b;
+}
+/*== User Registration ==*/
+div.k2AccountPage {
+}
+div.k2AccountPage > dl {
+  border-bottom: 1px solid #47484b;
+}
+/* Pagination */
+div.k2Pagination li span.pagenav,
+div.pagination li span.pagenav,
+div.itemCommentsPagination li span.pagenav,
+div.k2Pagination li a.pagenav,
+div.pagination li a.pagenav,
+div.itemCommentsPagination li a.pagenav {
+   background:url(../images/button_bg.gif) 0 0 repeat-x #cdcdcd; color:#36373a;
+}
+div.k2Pagination li.num span.pagenav,
+div.pagination li.num span.pagenav,
+div.itemCommentsPagination li.num span.pagenav,
+div.k2Pagination li a.pagenav:hover,
+div.pagination li a.pagenav:hover,
+div.itemCommentsPagination li a.pagenav:hover {
+  background:url(../images/button_bg_active.gif) 0 0 repeat-x #0078ba; color:#fff;
+}
+
+/*=== MAINBOTTOM POSITION ===*/
+/*=== BOTTOM POSITION ===*/
+/*=== FOOTER POSITION ===*/
