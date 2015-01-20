@@ -5,9 +5,12 @@ jimport('joomla.application.component.view');
 
 class GeocarsViewCar extends JView
 {
-	
 	function display($tpl = null)
-	{
+	{	
+		$this->year_from_value = JRequest::getVar('year_from', '');
+		$this->year_to_value = JRequest::getVar('year_to', '');
+		$this->type_value = JRequest::getVar('type', '');
+
 		$this->option = JRequest::getVar("option");
 		$this->user = JFactory::getUser();
 		$this->doc = JFactory::getDocument();
@@ -24,7 +27,6 @@ class GeocarsViewCar extends JView
 
 		$this->voted = $model->getVote( $car_id );
 		
-		
 		$options = array();
 		$options[] = JHTML::_('select.option', '', 'წელი' );
 		
@@ -35,17 +37,23 @@ class GeocarsViewCar extends JView
 			$year = $year - 1;
 		}
 		
-
 		$this->year_from = JHTML::_('select.genericlist', $options, 'year_from', ' class="inputbox form-control"', 'value', 'text' );
-		$this->year_to = JHTML::_('select.genericlist', $options, 'year_to', ' class="inputbox form-control"', 'value', 'text' );
+		$this->year_from_filter = JHTML::_('select.genericlist', $options, 'year_from', ' class="inputbox form-control"', 'value', 'text', $this->year_from_value );
 		
+
+		$this->year_to = JHTML::_('select.genericlist', $options, 'year_to', ' class="inputbox form-control"', 'value', 'text' );
+		$this->year_to_filter = JHTML::_('select.genericlist', $options, 'year_to', ' class="inputbox form-control"', 'value', 'text', $this->year_to_value );
+		
+
 		$options = array();
 		$options[] = JHTML::_('select.option', '', 'ტიპი' );
-		$options[] = JHTML::_('select.option', '1', 'გამოვთქვავ დადებით მოსაზრებას' );
-		$options[] = JHTML::_('select.option', '2', 'გამოვთქვავ უარყოფით მოსაზრებას' );
+		$options[] = JHTML::_('select.option', '1', 'დადებითი მოსაზრება' );
+		$options[] = JHTML::_('select.option', '2', 'უარყოფითი მოსაზრება' );
+		
 		$this->type = JHTML::_('select.genericlist', $options, 'type', ' class="inputbox form-control"', 'value', 'text' );
+		$this->type_filter = JHTML::_('select.genericlist', $options, 'type', ' class="inputbox form-control"', 'value', 'text', $this->type_value );
 		
-		
+
 		$this->page_suffix = 'car/'.$this->item->category_alias.'/'.$this->item->alias;
 		
 		$this->app_url = 'http://www.voteauto.ge';
@@ -54,7 +62,8 @@ class GeocarsViewCar extends JView
 		JFactory::getDocument()->setTitle('შეაფასე ავტომობილი  - '.$this->item->category_title.' '.$this->item->name );
 		
 		$this->opinions = $model->getOpinions( $this->item->id );
-		
+		$this->pagination = $model->getPagination();
+
 		parent::display($tpl);
 	}
 

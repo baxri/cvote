@@ -61,7 +61,7 @@
 			<?php echo $this->type ?>
 			
 			<textarea name="opinion" id="opinion"></textarea>
-			<button id="add_opinion_but">დაამატე შენი მოსაზრება</button>	
+			<button class="btn btn-primary" id="add_opinion_but">დაამატე შენი მოსაზრება</button>	
 			
 			<input type="hidden" name="car_id" value="<?php echo $this->item->id ?>" />
 			<input type="hidden" name="task" value="addOpinion" />
@@ -71,16 +71,30 @@
 	
 	</div>
 	
-	<div class="opinions-list">
+	<div>
+		<form action="#opinions" method="get">
+			<?php echo $this->year_from_filter; ?>
+			<?php echo $this->year_to_filter; ?>
+			<?php echo $this->type_filter; ?>
+			<button class="btn">ფილტრი</button>
+		</form>
+	</div>
+
+	<div class="opinions-list" id="opinions">
 		<?php if( !empty( $this->opinions ) ): ?>
+			
 			<?php foreach( $this->opinions as $key=>$value ): ?>
 				<div>
 					<?php echo $value->opinion ?>
 				</div>
-			<?php endforeach;; ?>
+			<?php endforeach; ?>
+
+			<div>
+				<?php echo $this->pagination->getPagesLinks(); ?>
+			</div>
+
 		<?php else: ?>
-			<div>მოცემულ ავტომობილზე არავის გამოუთქვამს მოსაზრება</div>
-			<div>იყავი პირველი და დააფიქსირე შენი აზრი</div>
+			<div>არც ერთი მომხარებლის მოსაზრება არმოიძებნა</div>
 		<?php endif; ?>
 	</div>			
 		
@@ -107,11 +121,7 @@ $this->doc->addScriptDeclaration('
 			$( "#add_opinion_block" ).toggle();		
 			return false;		
 		} );
-		
-				
 	});
-
-	
 
 ');
 

@@ -717,29 +717,67 @@ class GeocarsModelCar extends JModelItem
 
     public function getOpinions( $car ){
 
-    	$lim	= 5; 
-		$lim0	= JRequest::getVar('limitstart', 0, '', 'int');
+    	/*
+		* Filter Variables
+    	*/
+
+    	$year_from_value = JRequest::getVar('year_from', '');
+		$year_to_value = JRequest::getVar('year_to', '');
+		$type_value = (int)JRequest::getVar('type', '');
+
+    	$limit	= 5; 
+		$limitstart	= JRequest::getVar('limitstart', 0, '', 'int');
 
     	$db = JFactory::getDBO();
 
+    	$where = array();
+
+    	if( !empty( $year_from_value ) ){
+    		$where[] = 'op.year_from >= '.$year_from_value;
+    	}
+
+    	if( !empty( $year_to_value ) ){
+    		$where[] = 'op.year_to <=  '.$year_to_value;
+    	}
+
+    	if( !empty( $type_value ) ){
+    		$where[] = 'op.type = '.$type_value;
+    	}
+
+    	$where[] = 'op.car_id = '.(int) $car;
+
+		$where = count($where) ? ' WHERE ' . implode(' AND ', $where) . '' : '';       
+
     	$sql = 'select * 
     				from #__geocars_opinions as op
-    				left join #__users as u on u.id = op.user_id 
-    					where op.car_id='.(int)$car
-    					.' order by op.id desc';
+    				left join #__users as u on u.id = op.user_id';
+    	$sql .= $where;
 
     	$db->setQuery( $sql );
+    	$total = count( $db->loadObjectList() );
 
-    	jimport('joomla.html.pagination');
-    	$pageNav = new JPagination( $db->loadObjectList(), $lim0, $lim );
+    	$this->pagination = new JPagination($total, $limitstart, $limit);
 
+    	$sql = 'select * 
+    				from #__geocars_opinions as op
+    				left join #__users as u on u.id = op.user_id';
 
+    	$sql .= $where;
 
-    	$result = $db->loadObjectList();
+    	$sql .= ' ORDER BY op.id DESC ';
+
+    	if( $limit > 0 ){
+			$sql .=  ' LIMIT '.$limitstart.',  '.$limit;
+		}
+
+    	$db->setQuery( $sql );
+		$result = $db->loadObjectList();
 
     	return $result;
-    	
 
     }
 
+    public function getPagination(){
+    	return $this->pagination;
+    }
 }

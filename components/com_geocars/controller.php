@@ -168,12 +168,12 @@ class GeocarsController extends JController
 
 			$model = $this->getModel('opinion');
 			$model->addOpinion( $post );
-			$this->setRedirect( $url, 'თქვენი მოსაზრება წარმატებით დაემატა', 'success' );
+			$this->setRedirect( $url."#opinions", 'თქვენი მოსაზრება წარმატებით დაემატა' );
 			return;
 
 		}catch( Exception $e ){
 			
-			$this->setRedirect( $url, $e->getMessage(), 'error' );
+			$this->setRedirect( $url."#opinions", $e->getMessage(), 'error' );
 			return;
 		}
 	}	
