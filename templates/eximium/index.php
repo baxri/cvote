@@ -22,6 +22,8 @@ if (!defined( 'YJSGRUN' )) {
 	exit;
 }
 require( YJSGCORE_PATH );/* YJSGFramework main functions*/
+// Message overwrite
+require_once JPATH_ROOT .'/templates/'. $this->template .'/html/message.php';
 ?>
 <!DOCTYPE html>
 <html xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>"  dir="<?php echo $this->direction; ?>" class="<jdoc:include type="htmlclass" />">

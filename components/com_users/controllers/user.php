@@ -35,7 +35,8 @@ class UsersControllerUser extends UsersController
 		$data['return'] = base64_decode(JRequest::getVar('return', '', 'POST', 'BASE64'));
 		$data['username'] = JRequest::getVar('username', '', 'method', 'username');
 		$data['password'] = JRequest::getString('password', '', 'post', JREQUEST_ALLOWRAW);
-
+	
+		
 		// Set the return URL if empty.
 		if (empty($data['return'])) {
 			$data['return'] = 'index.php?option=com_users&view=profile';
@@ -58,12 +59,14 @@ class UsersControllerUser extends UsersController
 		if (true === $app->login($credentials, $options)) {
 			// Success
 			$app->setUserState('users.login.form.data', array());
-			$app->redirect(JRoute::_($app->getUserState('users.login.form.return'), false));
+			//$app->redirect(JRoute::_($app->getUserState('users.login.form.return'), false));
+			$app->redirect(JRoute::_( $data['return'] , false));
 		} else {
 			// Login failed !
 			$data['remember'] = (int)$options['remember'];
 			$app->setUserState('users.login.form.data', $data);
-			$app->redirect(JRoute::_('index.php?option=com_users&view=login', false));
+			//$app->redirect(JRoute::_('index.php?option=com_users&view=login', false));
+			$app->redirect(JRoute::_( $data['return'] , false));
 		}
 	}
 
