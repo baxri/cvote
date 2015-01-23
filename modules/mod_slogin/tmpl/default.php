@@ -69,7 +69,7 @@ defined('_JEXEC') or die('(@)|(@)');
 	<?php endif; ?>
 	<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
 	<input type="hidden" name="option" value="com_users" />
-	<?php echo base64_decode($return); ?>
+	<?php //echo base64_decode($return); ?>
 	<input type="hidden" name="task" value="user.login" />
 
 	<input type="hidden" name="return" value="<?php echo $return; ?>" />

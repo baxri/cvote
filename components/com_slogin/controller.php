@@ -222,7 +222,10 @@ class SLoginController extends SLoginControllerParent
             $this->displayRedirect('index.php?option=com_slogin&view=comparison_user', $popup);
         }
         elseif($userId){
-            $name = explode(' ', $name);
+            
+			return $userId;
+		   
+		    $name = explode(' ', $name);
             if(!isset($name[1])) $name[1] = '';
 
             $data = array(
