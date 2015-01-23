@@ -211,7 +211,10 @@ class SLoginController extends SLoginControllerParent
         $userId = $this->CheckEmail($email);
         //если в настройках установлено подтверждать права на почту и почта есть в базе пользователей
         if($userId && $this->config->get('collate_users', 0)){
-            $data = array(
+          
+		  	return $userId;
+		  
+		    $data = array(
                'email' => $email,
                'id' => $userId,
                'provider' => $provider,
