@@ -211,7 +211,10 @@ class SLoginController extends SLoginControllerParent
         $userId = $this->CheckEmail($email);
         //если в настройках установлено подтверждать права на почту и почта есть в базе пользователей
         if($userId && $this->config->get('collate_users', 0)){
-            $data = array(
+          
+		  	return $userId;
+		  
+		    $data = array(
                'email' => $email,
                'id' => $userId,
                'provider' => $provider,
@@ -222,7 +225,10 @@ class SLoginController extends SLoginControllerParent
             $this->displayRedirect('index.php?option=com_slogin&view=comparison_user', $popup);
         }
         elseif($userId){
-            $name = explode(' ', $name);
+            
+			return $userId;
+		   
+		    $name = explode(' ', $name);
             if(!isset($name[1])) $name[1] = '';
 
             $data = array(
