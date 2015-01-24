@@ -268,6 +268,7 @@ class SLoginController extends SLoginControllerParent
             //throw new Exception($user_object->getError());
         }
 
+        // Debug user stroting
         echo '<pre>';
         print_r($user);
         die;
