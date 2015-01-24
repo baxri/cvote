@@ -107,6 +107,8 @@ class SLoginController extends SLoginControllerParent
             exit;
         }
 
+        print_r($request->email);
+        die(  );
 
         if (isset($request->first_name))
         {
