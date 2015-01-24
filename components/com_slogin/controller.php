@@ -285,7 +285,7 @@ class SLoginController extends SLoginControllerParent
     protected function loginUser($id, $provider, $info=array())
     {   
 
-        die;
+        die($id);
 
         $instance = JUser::getInstance($id);
         $app = JFactory::getApplication();
