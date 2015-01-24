@@ -107,9 +107,6 @@ class SLoginController extends SLoginControllerParent
             exit;
         }
 
-        print_r($request->email);
-        die(  );
-
         if (isset($request->first_name))
         {
             $this->storeOrLogin($request->first_name, $request->last_name, $request->email, $request->id, $plugin, true, $request->all_request);
@@ -209,16 +206,13 @@ class SLoginController extends SLoginControllerParent
     {   
         $app	= JFactory::getApplication();
 
-        // Debug user stroting
-        echo '<pre>';
-        print_r( $email );
-        die;
+       
 
         //отсылаем на подверждение владения мылом если разрешено и найдено
         $userId = $this->CheckEmail($email);
         //если в настройках установлено подтверждать права на почту и почта есть в базе пользователей
         
-
+       
 
         if($userId && $this->config->get('collate_users', 0)){
           
@@ -267,16 +261,11 @@ class SLoginController extends SLoginControllerParent
 
         $user_object = new JUser;
 
-
-       
-
         if (!$user_object->bind($user)) {
             $this->setError($user_object->getError());
             return false;
             //throw new Exception($user_object->getError());
         }
-
-
 
         if (!$user_object->save()) {
             $this->setError($user_object->getError());
@@ -284,7 +273,10 @@ class SLoginController extends SLoginControllerParent
             //throw new Exception($user_object->getError());
         }
 
-
+         // Debug user stroting
+       // echo '<pre>';
+        //print_r( $user_object );
+        //die;
 
         $this->storeSloginUser($user_object->id, $slogin_id, $provider);
 
