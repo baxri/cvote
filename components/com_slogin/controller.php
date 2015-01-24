@@ -427,9 +427,6 @@ class SLoginController extends SLoginControllerParent
         $query->where($db->quoteName('provider') . ' = ' . $db->quote($provider));
         $db->setQuery($query, 0, 1);
         $userId = $db->loadResult();
-       
-        d( $db );
-
         return $userId;
     }
 
