@@ -14,10 +14,18 @@ defined('_JEXEC') or die('(@)|(@)');
 require_once JPATH_BASE.'/modules/mod_login/helper.php';
 
 $user = JFactory::getUser();
+
+if( !empty( $user->id ) ){
+    $slogin_user = modLoginHelper::loadAvatar( $user->id );
+}else{
+    $slogin_user = null;
+}
+
 $doc = JFactory::getDocument();
 $input = new JInput;
 
 $type	= modLoginHelper::getType();
+
 
 $return	= modLoginHelper::getReturnURL($params, $type);
 

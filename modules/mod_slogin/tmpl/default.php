@@ -15,7 +15,13 @@ defined('_JEXEC') or die('(@)|(@)');
 
 <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
 	<div class="login-greeting">
-	<?php echo JText::sprintf('MOD_SLOGIN_HINAME', htmlspecialchars($user->get('name')));	 ?>
+		<?php echo JText::_('USER') ?>
+	</div>
+	<div>
+	<img src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=large" />
+	</div>
+	<div class="login-greeting">
+		<p class="user_name_wellcome"><?php echo $user->name; ?></p>
 	</div>
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />

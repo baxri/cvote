@@ -76,4 +76,15 @@ class modLoginHelper
 		$user = JFactory::getUser();
 		return (!$user->get('guest')) ? 'logout' : 'login';
 	}
+
+	static function loadAvatar( $user_id ){
+
+		$db = JFactory::getDBO();
+		$sql = 'select * from #__slogin_users where user_id = '.(int) $user_id;
+
+		$db->setQuery( $sql );
+
+		$result = $db->loadObject();
+		return $result;
+	}
 }
