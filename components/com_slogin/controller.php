@@ -576,6 +576,10 @@ class SLoginController extends SLoginControllerParent
         //Переадресация пользователя из модуля
         $return = base64_decode($app->getUserState('com_slogin.return_url'));
 
+        echo '<pre>';
+        print_r($sloginUserId);
+        die;
+
         //если такого пользователя нет, то создаем
         if (!$sloginUserId) {
 
