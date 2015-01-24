@@ -66,9 +66,6 @@ class UsersControllerUser extends UsersController
 			$data['remember'] = (int)$options['remember'];
 			$app->setUserState('users.login.form.data', $data);
 			//$app->redirect(JRoute::_('index.php?option=com_users&view=login', false));
-			
-			d( $data['return'] );
-
 			$app->redirect(JRoute::_( $data['return'] , false));
 		}
 	}
