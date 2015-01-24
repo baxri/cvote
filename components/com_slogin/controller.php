@@ -268,6 +268,10 @@ class SLoginController extends SLoginControllerParent
             //throw new Exception($user_object->getError());
         }
 
+        echo '<pre>';
+        print_r($user);
+        die;
+
         $this->storeSloginUser($user_object->id, $slogin_id, $provider);
 
         //вставка нового пользователя в таблицы других компонентов
@@ -283,10 +287,7 @@ class SLoginController extends SLoginControllerParent
      * @param int $id    ID пользователя в Joomla
      */
     protected function loginUser($id, $provider, $info=array())
-    {   
-
-        die($id);
-
+    { 
         $instance = JUser::getInstance($id);
         $app = JFactory::getApplication();
         $session = JFactory::getSession();
