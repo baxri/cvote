@@ -86,7 +86,7 @@ class SLoginController extends SLoginControllerParent
      * Создание новой учетной записи на сайте или утентификация, если такой пользователь уже есть
      */
     public function check()
-    {
+    {  
         $input = JFactory::getApplication()->input;
 
         $plugin = $input->getString('plugin', '');
