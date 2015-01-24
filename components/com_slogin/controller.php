@@ -243,6 +243,7 @@ class SLoginController extends SLoginControllerParent
             $this->displayRedirect('index.php?option=com_slogin&view=mail', $popup, JText::_('COM_SLOGIN_MAIL_NOT_FREE'), 'error');
         }
 
+
         //установка групп для нового пользователя
         $user_config = JComponentHelper::getParams('com_users');
         $defaultUserGroup = $user_config->get('new_usertype', 2);
@@ -256,17 +257,20 @@ class SLoginController extends SLoginControllerParent
 
         $user_object = new JUser;
 
+        
+         // Debug user stroting
+        echo '<pre>';
+        print_r($user);
+        die;
+        
         if (!$user_object->bind($user)) {
             $this->setError($user_object->getError());
             return false;
             //throw new Exception($user_object->getError());
         }
 
-         // Debug user stroting
-        echo '<pre>';
-        print_r($user);
-        die;
-        
+
+
         if (!$user_object->save()) {
             $this->setError($user_object->getError());
             return false;
