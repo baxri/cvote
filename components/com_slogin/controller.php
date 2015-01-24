@@ -204,7 +204,9 @@ class SLoginController extends SLoginControllerParent
      * @throws Exception
      */
     protected function storeUser($username, $name, $email, $slogin_id, $provider, $popup=false, $info=array())
-    {
+    {   
+        die;
+
         $app	= JFactory::getApplication();
 
         //отсылаем на подверждение владения мылом если разрешено и найдено
