@@ -17,9 +17,13 @@ defined('_JEXEC') or die('(@)|(@)');
 	<div class="login-greeting">
 		<?php echo JText::_('USER') ?>
 	</div>
-	<div>
-	<img src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=large" />
-	</div>
+	
+	<?php if( $slogin_user != null ): ?>
+		<div>
+			<img width="50" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=small" />
+		</div>
+	<?php endif; ?>
+
 	<div class="login-greeting">
 		<p class="user_name_wellcome"><?php echo $user->name; ?></p>
 	</div>
