@@ -210,6 +210,12 @@ class SLoginController extends SLoginControllerParent
         //отсылаем на подверждение владения мылом если разрешено и найдено
         $userId = $this->CheckEmail($email);
         //если в настройках установлено подтверждать права на почту и почта есть в базе пользователей
+        
+        // Debug user stroting
+        echo '<pre>';
+        print_r($userId);
+        die;
+
         if($userId && $this->config->get('collate_users', 0)){
           
 		  	return $userId;
@@ -257,12 +263,9 @@ class SLoginController extends SLoginControllerParent
 
         $user_object = new JUser;
 
-        
-         // Debug user stroting
-        echo '<pre>';
-        print_r($user);
-        die;
-        
+
+       
+
         if (!$user_object->bind($user)) {
             $this->setError($user_object->getError());
             return false;
