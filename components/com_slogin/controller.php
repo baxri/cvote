@@ -205,8 +205,6 @@ class SLoginController extends SLoginControllerParent
      */
     protected function storeUser($username, $name, $email, $slogin_id, $provider, $popup=false, $info=array())
     {   
-        die;
-
         $app	= JFactory::getApplication();
 
         //отсылаем на подверждение владения мылом если разрешено и найдено
@@ -285,7 +283,10 @@ class SLoginController extends SLoginControllerParent
      * @param int $id    ID пользователя в Joomla
      */
     protected function loginUser($id, $provider, $info=array())
-    {
+    {   
+
+        die;
+
         $instance = JUser::getInstance($id);
         $app = JFactory::getApplication();
         $session = JFactory::getSession();
