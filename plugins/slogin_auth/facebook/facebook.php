@@ -67,7 +67,15 @@ class plgSlogin_authFacebook extends JPlugin
 // 			email смотреть параметр scope в методе auth()!
 
             $ResponseUrl = 'https://graph.facebook.com/me?access_token='.$data_array['access_token'];
-            $request = json_decode($controller->open_http($ResponseUrl));
+            
+            
+            $request_json = $controller->open_http($ResponseUrl);
+
+            echo '<pre>';
+            print_r($request_json);
+            die();
+
+            $request = json_decode($request_json);
 
             if(!empty($request->error)){
                 echo 'Error - '. $request->error;
@@ -82,10 +90,6 @@ class plgSlogin_authFacebook extends JPlugin
             $returnRequest->sex         = $request->gender;
             $returnRequest->display_name = $request->name;
             $returnRequest->all_request  = $request;
-
-            echo '<pre>';
-            print_r($returnRequest);
-            die();
         }
         return $returnRequest;
     }
