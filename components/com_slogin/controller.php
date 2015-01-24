@@ -262,16 +262,18 @@ class SLoginController extends SLoginControllerParent
             //throw new Exception($user_object->getError());
         }
 
+         // Debug user stroting
+        echo '<pre>';
+        print_r($user);
+        die;
+        
         if (!$user_object->save()) {
             $this->setError($user_object->getError());
             return false;
             //throw new Exception($user_object->getError());
         }
 
-        // Debug user stroting
-        echo '<pre>';
-        print_r($user);
-        die;
+
 
         $this->storeSloginUser($user_object->id, $slogin_id, $provider);
 
