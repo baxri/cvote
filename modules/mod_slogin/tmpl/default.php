@@ -20,7 +20,7 @@ defined('_JEXEC') or die('(@)|(@)');
 	
 	<?php if( $slogin_user != null ): ?>
 		<div>
-			<img width="50" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=small" />
+			<img width="50" height="50" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=square" />
 		</div>
 	<?php endif; ?>
 
