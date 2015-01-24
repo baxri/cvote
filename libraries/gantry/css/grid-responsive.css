@@ -1,5 +1,5 @@
 /**
-* @version   $Id: grid-responsive.css 20941 2014-05-07 19:46:51Z kevin $
+* @version   $Id: grid-responsive.css 2375 2012-08-14 22:41:53Z kevin $
 * @author    RocketTheme http://www.rockettheme.com
 * @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
 * @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
@@ -8,7 +8,7 @@
 body {min-width: 100px !important;}
 body [class*="rt-grid"] {display: inline;float: left;position: relative;margin: 0;}
 
-.rt-container {width: 1200px;margin: 0 auto;}
+.rt-container {width: 1200px;margin: 0 auto;position: relative;}
 .rt-grid-1 {width: 100px;}
 .rt-grid-2 {width: 200px;}
 .rt-grid-3 {width: 300px;}

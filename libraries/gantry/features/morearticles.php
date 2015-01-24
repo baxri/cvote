@@ -1,6 +1,6 @@
 <?php
 /**
- * @version   $Id: morearticles.php 23362 2014-10-05 14:28:04Z james $
+ * @version   $Id: morearticles.php 2473 2012-08-17 17:16:49Z btowles $
  * @author    RocketTheme http://www.rockettheme.com
  * @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
@@ -33,7 +33,7 @@ class GantryFeatureMoreArticles extends GantryFeature
 			                                                                                                     'tmpl' => 'component',
 			                                                                                                     'type' => 'raw'
 			                                                                                                )));
-			$gantry->addInlineScript("window.addEvent('domready', function() { new GantryMoreArticles({'leadings': " . $this->_getCurrentLeadingArticles() . ", 'moreText': '" . addslashes($this->get('text')) . "', 'url': '" . $queryUrl . "'}); });");
+			$gantry->addInlineScript("window.addEvent('domready', function() { new GantryMoreArticles({'leadings': " . $this->_getCurrentLeadingArticles() . ", 'moreText': '" . addslashes($this->get('text')) . "', 'url': '" . $queryUrl . "'}); })");
 
 			if ($gantry->get('morearticles-pagination')) {
 				$gantry->addInlineStyle('.rt-pagination {display: none;}');

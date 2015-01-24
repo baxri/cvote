@@ -3,7 +3,7 @@
  * CHANGELOG
  *
  * @package		gantry
- * @version		4.1.27 December 31, 2014
+ * @version		4.1.24 April 12, 2014
  * @author		RocketTheme http://www.rockettheme.com
  * @copyright 	Copyright (C) 2007 - 2014 RocketTheme, LLC
  * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only

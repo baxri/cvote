@@ -48,31 +48,34 @@
 		
 		<?php if( !empty( $this->user->id ) ): ?>
 			<a id="open_add_opinion_dialog" href="javascript:void(0)">დაამატე</a> მოსაზრება მომხმარებლით: <?php echo $this->user->name ?>
+		
+			<div class="add_opinion_block" id="add_opinion_block">
+	
+				<form action="index.php" method="post" id="add_opinion_form">
+					
+					<?php echo $this->year_from ?>
+					<?php echo $this->year_to ?>
+					<?php echo $this->type ?>
+					
+					<textarea name="opinion" id="opinion"></textarea>
+					<button class="btn btn-primary" id="add_opinion_but">დაამატე შენი მოსაზრება</button>	
+					
+					<input type="hidden" name="car_id" value="<?php echo $this->item->id ?>" />
+					<input type="hidden" name="task" value="addOpinion" />
+					<input type="hidden" name="option" value="<?php echo $this->option ?>" />
+					
+				</form>
+			
+			</div>
+
 		<?php else: ?>
 			მოსაზრების გამოსათქმელად გაიარეთ ავტორიზაცია
 		<?php endif; ?>
 
-	<div class="add_opinion_block" id="add_opinion_block">
 	
-		<form action="index.php" method="post" id="add_opinion_form">
-			
-			<?php echo $this->year_from ?>
-			<?php echo $this->year_to ?>
-			<?php echo $this->type ?>
-			
-			<textarea name="opinion" id="opinion"></textarea>
-			<button class="btn btn-primary" id="add_opinion_but">დაამატე შენი მოსაზრება</button>	
-			
-			<input type="hidden" name="car_id" value="<?php echo $this->item->id ?>" />
-			<input type="hidden" name="task" value="addOpinion" />
-			<input type="hidden" name="option" value="<?php echo $this->option ?>" />
-			
-		</form>
-	
-	</div>
 	
 	<div>
-		<form action="#opinions" method="get">
+		<form action="?" method="get">
 			<?php echo $this->year_from_filter; ?>
 			<?php echo $this->year_to_filter; ?>
 			<?php echo $this->type_filter; ?>

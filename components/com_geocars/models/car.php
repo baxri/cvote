@@ -756,6 +756,7 @@ class GeocarsModelCar extends JModelItem
     	$db->setQuery( $sql );
     	$total = count( $db->loadObjectList() );
 
+    	jimport( 'joomla.html.pagination' );
     	$this->pagination = new JPagination($total, $limitstart, $limit);
 
     	$sql = 'select * 

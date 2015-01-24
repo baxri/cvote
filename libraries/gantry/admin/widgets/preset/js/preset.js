@@ -68,7 +68,7 @@ var p;if(!m.getParent(".gantry-field")){p=m.getParent().getPrevious().getElement
 p.set("html",'<span class="preset-info"></span> '+p.retrieve("gantry:text"));p.store("gantry:notice",true);}switch(n){case"select":m.set("value",q);m.fireEvent("change");
 if(typeof jQuery!="undefined"){jQuery("#"+m.id).trigger("liszt:updated");}break;case"input":var s=m.get("class");m.set("value",q);if(!s){m.set("value",q);
 }else{if(s.contains("picker-input")){document.getElement("[data-moorainbow-trigger="+m.id+"] .overlay").setStyle("background-color",q);}else{if(s.contains("background-picker")){m.fireEvent("keyup",q);
-}else{if(s.contains("slider")){var l=window.sliders[(GantryParamsPrefix+r.replace(/-/g,"_")).replace("-","_")];l.set(l.list.indexOf(q));l.hiddenEl.fireEvent("set",q);
+}else{if(s.contains("slider")){var l=window.sliders[(GantryParamsPrefix+r.replace(/-/,"_")).replace("-","_")];l.set(l.list.indexOf(q));l.hiddenEl.fireEvent("set",q);
 }else{if(s.contains("toggle")){m.set("value",q);m.getParent(".toggle").removeClass("toggle-off").removeClass("toggle-on").addClass(q=="1"?"toggle-on":"toggle-off");
 }}}}}break;}});Scroller.involved.each(function(k,l){var m=k.get("text").toInt();if(!m){Scroller.involvedFx[l].element.getParent().removeClass("double-badge");
 Scroller.involvedFx[l].cancel().start("opacity",[1,0]).chain(function(){this.element.setStyle("display","none");});return;}var n=Scroller.involvedFx[l].element.getNext("span");

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version   $Id: analytics.php 21698 2014-06-25 17:44:42Z djamil $
+ * @version   $Id: analytics.php 19328 2014-02-28 18:53:02Z btowles $
  * @author    RocketTheme http://www.rockettheme.com
  * @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
