@@ -22,7 +22,7 @@ defined('_JEXEC') or die('(@)|(@)');
         <?php endif; ?>
 
         <div class="login-greeting logout-floats">
-            <p class="user_name_wellcome"><?php echo $user->name; ?></p>
+            <p class="user_name_wellcome"><?php echo $user->name; ?> <?php echo ucfirst($slogin_user->provider); ?> - დან</p>
             <input type="submit" name="Submit" class="button logout-button" value="<?php echo JText::_('JLOGOUT'); ?>" />
         </div>
 
