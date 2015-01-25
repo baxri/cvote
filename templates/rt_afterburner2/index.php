@@ -19,7 +19,7 @@ $gantry->init();
 /* Get the Current Preset */
 $gpreset = str_replace(' ','',strtolower($gantry->get('name')));
 
-die("OK");
+
 
 ?>
 <!doctype html>
@@ -130,5 +130,8 @@ die("OK");
 </body>
 </html>
 <?php
+
+die("OK");
+
 $gantry->finalize();
 ?>
