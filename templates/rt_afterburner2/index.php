@@ -18,9 +18,6 @@ require_once(dirname(__FILE__) . '/lib/gantry/gantry.php');
 $gantry->init();
 /* Get the Current Preset */
 $gpreset = str_replace(' ','',strtolower($gantry->get('name')));
-
-
-
 ?>
 <!doctype html>
 <html xml:lang="<?php echo $gantry->language; ?>" lang="<?php echo $gantry->language;?>" >
@@ -130,8 +127,5 @@ $gpreset = str_replace(' ','',strtolower($gantry->get('name')));
 </body>
 </html>
 <?php
-
-die("OK");
-
 $gantry->finalize();
 ?>
