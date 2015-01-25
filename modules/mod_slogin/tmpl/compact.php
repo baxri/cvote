@@ -56,6 +56,8 @@ defined('_JEXEC') or die('(@)|(@)');
         <?php endif; ?>
     </div>
 
+    
+
 <div class="slogin-clear"></div>
 
     <?php if ($params->get('pretext')): ?>
