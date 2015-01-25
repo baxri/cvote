@@ -12,44 +12,49 @@
 defined('_JEXEC') or die('(@)|(@)');
 ?>
 <?php if ($type == 'logout') : ?>
-
 <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
-    <div class="login-greeting">
-        <?php echo JText::_('USER') ?>
-    </div>
+
+
+        <?php if( $slogin_user != null ): ?>
+            <div class="logout-floats">
+                <img width="60" height="60" class="img-circle" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=square" />
+            </div>
+        <?php endif; ?>
+
+        <div class="login-greeting logout-floats">
+            <p class="user_name_wellcome"><?php echo $user->name; ?></p>
+            <input type="submit" name="Submit" class="button logout-button" value="<?php echo JText::_('JLOGOUT'); ?>" />
+        </div>
+
+        <div class="logout-button logout-floats">
+            
+            <input type="hidden" name="option" value="com_users" />
+            <input type="hidden" name="task" value="user.logout" />
+            <input type="hidden" name="return" value="<?php echo $return; ?>" />
+            <?php echo JHtml::_('form.token'); ?>
+        </div>
+
+
+</form>
+<?php else : ?>
     
-    <?php if( $slogin_user != null ): ?>
-        <div>
-            <img width="50" height="50" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=square" />
+    <?php if ($params->get('inittext')): ?>
+        <div class="pretext">
+            <p><?php echo $params->get('inittext'); ?></p>
         </div>
     <?php endif; ?>
 
-    <div class="login-greeting">
-        <p class="user_name_wellcome"><?php echo $user->name; ?></p>
+    <div id="slogin-buttons" class="slogin-buttons <?php echo $moduleclass_sfx?>">
+        <?php if (count($plugins)): ?>
+            <?php foreach($plugins as $link): ?>
+                <a href="<?php echo JRoute::_($link['link']);?>">
+                    <span class="<?php echo $link['class'];?>">
+                        
+                    </span>
+                </a>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
-    <div class="logout-button">
-        <input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />
-        <input type="hidden" name="option" value="com_users" />
-        <input type="hidden" name="task" value="user.logout" />
-        <input type="hidden" name="return" value="<?php echo $return; ?>" />
-        <?php echo JHtml::_('form.token'); ?>
-    </div>
-</form>
-<?php else : ?>
-<?php if ($params->get('inittext')): ?>
-
-    <div class="pretext">
-        <p><?php echo $params->get('inittext'); ?></p>
-    </div>
-    <?php endif; ?>
-
-<div id="slogin-buttons" class="slogin-buttons <?php echo $moduleclass_sfx?>">
-    <?php if (count($plugins)): ?>
-        <?php foreach($plugins as $link): ?>
-            <a href="<?php echo JRoute::_($link['link']);?>"><span class="<?php echo $link['class'];?>">&nbsp;</span></a>
-        <?php endforeach; ?>
-    <?php endif; ?>
-</div>
 
 <div class="slogin-clear"></div>
 
@@ -108,3 +113,4 @@ defined('_JEXEC') or die('(@)|(@)');
     </form>
     <?php endif; ?>
 <?php endif; ?>
+

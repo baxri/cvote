@@ -24,16 +24,54 @@
 	margin: 5px;
 }
 
+.logout-floats{
+	float: left;
+}
+
+.rt-block.geocars_login{
+	padding: 0px;
+	margin: 0px;
+}
+
+.login-greeting{
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.logout-button{
+	padding: 2px;
+	padding-left: 5px;
+	padding-right: 6px;
+}
+
+.user_name_wellcome{
+	padding: 0px;
+	margin: 0px;
+}
+
+.slogin-buttons a{
+	margin-top: 23px !important;
+}
+
+#slogin-buttons{
+	height: 85px !important;
+}
+
+
+
 @media all and (max-width: 1000px) and (min-width: 0px) {
   	
   	.search-block{
 		text-align: center;
 	}
 
-	.geocars_login{
-		text-align: center;
+	.slogin-buttons.geocars_login{
+		text-align: center !important;
+		height: 85px !important;
+		margin-bottom: 50px;
 	}
 
+	
 }
 
 
