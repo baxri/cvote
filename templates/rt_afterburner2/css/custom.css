@@ -1,4 +1,8 @@
 
+.cls{
+	clear: both;
+}
+
 #detail_info_body{
 	display: none;
 }
@@ -57,7 +61,57 @@
 	height: 85px !important;
 }
 
+.opinion_row{
+	border: 1px solid lightgray;
+	height: auto;
+	margin-bottom: 5px;
+	padding: 5px;
+}
 
+.opinion-float-block{
+	float: left !important;
+}
+
+.good-row{
+	border-left: 5px solid green;
+}
+
+.bad-row{
+	border-left: 5px solid red;
+}
+
+.opinion-text{
+	padding-left: 10px;
+}
+
+.add-opinion-block{
+	margin-bottom: 20px;
+}
+
+.opinion-textarea{
+	width: 652px;
+}
+
+.allow-symbols{
+	margin-top: 20px;
+}
+
+.car-float-block{
+	float: left;
+}
+
+.car-right-block{
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.like_button_div{
+	margin-top: 10px;
+}
+
+.share-button{
+	margin-bottom: 10px;
+}
 
 @media all and (max-width: 1000px) and (min-width: 0px) {
   	
@@ -70,6 +124,15 @@
 		height: 85px !important;
 		margin-bottom: 50px;
 	}
+
+	.opinion-textarea{
+		width: 95%;
+	}
+
+	.car-right-block{
+		padding-left: 0px;
+	}
+}
 
 	
 }

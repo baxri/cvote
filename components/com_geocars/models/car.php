@@ -744,7 +744,7 @@ class GeocarsModelCar extends JModelItem
     		$where[] = 'op.type = '.$type_value;
     	}
 
-    	$where[] = 'op.car_id = '.(int) $car;
+    	//$where[] = 'op.car_id = '.(int) $car;
 
 		$where = count($where) ? ' WHERE ' . implode(' AND ', $where) . '' : '';       
 
@@ -761,7 +761,8 @@ class GeocarsModelCar extends JModelItem
 
     	$sql = 'select * 
     				from #__geocars_opinions as op
-    				left join #__users as u on u.id = op.user_id';
+    				left join #__users as u on u.id = op.user_id
+    				left join #__slogin_users as su on su.user_id = u.id';
 
     	$sql .= $where;
 
@@ -773,8 +774,8 @@ class GeocarsModelCar extends JModelItem
 
     	$db->setQuery( $sql );
 		$result = $db->loadObjectList();
-
-    	return $result;
+		
+		return $result;
 
     }
 

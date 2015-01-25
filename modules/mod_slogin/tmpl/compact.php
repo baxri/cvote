@@ -15,9 +15,11 @@ defined('_JEXEC') or die('(@)|(@)');
 <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
 
 
-        <?php if( $slogin_user != null ): ?>
+        <?php 
+
+        if( $slogin_user != null ): ?>
             <div class="logout-floats">
-                <img width="60" height="60" class="img-circle" src="http://graph.facebook.com/<?php echo $slogin_user->slogin_id ?>/picture?type=square" />
+                <img width="60" height="60" class="img-circle" src="<?php echo modLoginHelper::getAvatarUrl( $slogin_user->slogin_id, $slogin_user->provider ); ?>" />
             </div>
         <?php endif; ?>
 

@@ -21,6 +21,12 @@ class GeocarsModelOpinion extends JModel
 			throw new Exception("მოსაზრების ტექსტი ცარიელია");
 		}
 
+		$length = strlen($post['opinion']);
+
+		if( $length > 1000 ){
+			throw new Exception("დასაშვებია მაქსიმუმ 1000 სიმბოლო");
+		}
+
 		if( empty( $post['type'] ) ){
 			throw new Exception("არ არის მითითებული მოსაზრების ტიპი");
 		}

@@ -87,4 +87,21 @@ class modLoginHelper
 		$result = $db->loadObject();
 		return $result;
 	}
+
+	static function getAvatarUrl( $slogin_id, $provider, $size = 50 ){
+
+		switch ( $provider ) {
+			case 'facebook':
+				$src = 'http://graph.facebook.com/'.$slogin_id.'/picture?type=square';
+				break;
+			
+			default:
+				$src = "http://profiles.google.com/s2/photos/profile/" . $slogin_id . "?sz=" . $size;
+				break;
+		}
+
+		return $src;
+
+	}
+
 }
