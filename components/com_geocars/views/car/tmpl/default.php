@@ -59,7 +59,7 @@ require_once JPATH_SITE.DS.'modules/mod_login/helper.php';
 
 		</div>
 
-		
+
 		<div class="add-opinion-block">
 			<?php if( !empty( $this->user->id ) ): ?>
 				<a id="open_add_opinion_dialog" href="javascript:void(0)">დაამატე</a> მოსაზრება მომხმარებლით: <?php echo $this->user->name ?>

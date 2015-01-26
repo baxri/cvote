@@ -165,7 +165,7 @@ class GeocarsController extends JController
 		$url = JRoute::_("index.php?option=com_geocars&car=".$post['car_id']."&Itemid=".$this->car_item_id, false);
 		
 		try{
-
+			
 			$model = $this->getModel('opinion');
 			$model->addOpinion( $post );
 			$this->setRedirect( $url, 'თქვენი მოსაზრება წარმატებით დაემატა' );
