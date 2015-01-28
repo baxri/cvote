@@ -72,6 +72,11 @@
 	float: left !important;
 }
 
+.default-row{
+	border-left: 5px solid gray;
+}
+
+
 .good-row{
 	border-left: 5px solid green;
 }
@@ -79,6 +84,7 @@
 .bad-row{
 	border-left: 5px solid red;
 }
+
 
 .opinion-text{
 	padding-left: 10px;
@@ -89,7 +95,7 @@
 }
 
 .opinion-textarea{
-	width: 652px;
+	width: 100%;
 }
 
 .allow-symbols{
@@ -112,6 +118,15 @@
 .share-button{
 	margin-bottom: 10px;
 }
+
+.tab_content{
+	display: none;
+}
+
+.tab_1_content{
+	display: block;
+}
+
 
 @media all and (max-width: 1000px) and (min-width: 0px) {
   	
