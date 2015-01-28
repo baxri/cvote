@@ -102,9 +102,18 @@ require_once JPATH_SITE.DS.'modules/mod_login/helper.php';
 	<div>
 		<form action="?" method="get">
 			<div>ფილტრაციის პარამეტრები</div>
-			<?php echo $this->year_from_filter; ?>
-			<?php echo $this->year_to_filter; ?>
-			<?php echo $this->type_filter; ?>
+			
+			<div>
+				<?php echo $this->year_from_filter; ?>
+				<?php echo $this->year_to_filter; ?>
+				<?php echo $this->type_filter; ?>
+			</div>
+
+			<div>
+				<?php echo $this->country_filter; ?>				
+			</div>
+
+
 			<div>
 				<button class="btn">გაფილტრე</button>
 			</div>
@@ -115,7 +124,7 @@ require_once JPATH_SITE.DS.'modules/mod_login/helper.php';
 		<?php if( !empty( $this->opinions ) ): ?>
 			
 			<?php foreach( $this->opinions as $key=>$value ): ?>
-				<div class="opinion_row <?php echo $value->type == 1 ? 'good-row' : 'bad-row' ?>" >
+				<div class="opinion_row default-row <?php echo $value->type == 1 ? 'good-row' : '' ?> <?php echo $value->type == 2 ? 'bad-row' : '' ?>" >
 					<div class="opinion-float-block">
 						<img width="30" height="30" class="img-circle" src="<?php echo modLoginHelper::getAvatarUrl( $value->slogin_id, $value->provider ); ?>" />
   					</div>
@@ -152,11 +161,11 @@ $this->doc->addScriptDeclaration('
 	$(document).ready( function(){		
 		$.get("index.php?option=com_geocars&view=opinions&car='.$this->item->id.'", function( data ){			
 			$("#opinions_block").html("").html( data );			
-		});	
-		
+		});		
 		
 		$("#open_add_opinion_dialog").bind( "click", function(){		
-			$( "#add_opinion_block" ).toggle();		
+			$( "#add_opinion_block" ).toggle();				
+			$(".opinion-textarea").focus();			
 			return false;		
 		} );
 	});

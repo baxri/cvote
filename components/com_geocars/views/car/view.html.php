@@ -10,6 +10,8 @@ class GeocarsViewCar extends JView
 		$this->year_from_value = JRequest::getVar('year_from', '');
 		$this->year_to_value = JRequest::getVar('year_to', '');
 		$this->type_value = JRequest::getVar('type', '');
+		$this->country_value = JRequest::getVar('country', '');
+		$this->engine_value = JRequest::getVar('engine', '');
 
 		$this->option = JRequest::getVar("option");
 		$this->user = JFactory::getUser();
@@ -28,7 +30,7 @@ class GeocarsViewCar extends JView
 		$this->voted = $model->getVote( $car_id );
 		
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'წელი' );
+		$options[] = JHTML::_('select.option', '', 'წელი - დან /მდე' );
 		
 		$year = date('Y');
 			
@@ -52,6 +54,16 @@ class GeocarsViewCar extends JView
 		
 		$this->type = JHTML::_('select.genericlist', $options, 'type', ' class="inputbox form-control"', 'value', 'text' );
 		$this->type_filter = JHTML::_('select.genericlist', $options, 'type', ' class="inputbox form-control"', 'value', 'text', $this->type_value );
+		
+
+		$options = array();
+		$options[] = JHTML::_('select.option', '', 'ქვეყანა' );
+		$options[] = JHTML::_('select.option', '1', 'ამერიკული' );
+		$options[] = JHTML::_('select.option', '2', 'ევროპული' );
+		$options[] = JHTML::_('select.option', '3', 'იაპონური' );
+		
+		$this->country = JHTML::_('select.genericlist', $options, 'country', ' class="inputbox form-control"', 'value', 'text' );
+		$this->country_filter = JHTML::_('select.genericlist', $options, 'country', ' class="inputbox form-control"', 'value', 'text', $this->country_value );
 		
 
 		$this->page_suffix = 'car/'.$this->item->category_alias.'/'.$this->item->alias;
