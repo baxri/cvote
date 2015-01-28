@@ -22,7 +22,7 @@ if( !in_array($_SERVER['REMOTE_ADDR'], array(
 
 											)) )
 {
-	die("Access Denied!");
+	//die("Access Denied!");
 }
 
 if (!defined('_JDEFINES')) {
