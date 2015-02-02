@@ -166,8 +166,15 @@ class GeocarsController extends JController
 		
 		try{
 			
+			$session = JFactory::getSession();
+			$session->set( 'opinion.post.data', $post );
+
 			$model = $this->getModel('opinion');
 			$model->addOpinion( $post );
+
+			// Clear all post data from session
+			$session->set( 'opinion.post.data', array() );
+
 			$this->setRedirect( $url, 'თქვენი მოსაზრება წარმატებით დაემატა' );
 			return;
 

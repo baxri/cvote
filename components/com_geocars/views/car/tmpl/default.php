@@ -76,8 +76,10 @@ require_once JPATH_SITE.DS.'modules/mod_login/helper.php';
 							<?php echo $this->type ?>
 						</div>
 
+						<p>აუცილებლად მიუთითეთ მოსაზრების ტიპი ( დადებითი / უარყოფითი ) მოსაზრება</p>
+
 						<div>
-							<textarea class="opinion-textarea" name="opinion" id="opinion"></textarea>
+							<textarea class="opinion-textarea" name="opinion" id="opinion"><?php echo @$this->post_data['opinion'] ?></textarea>
 						</div>
 
 						<div>
@@ -156,7 +158,7 @@ require_once JPATH_SITE.DS.'modules/mod_login/helper.php';
 
 <?php
 
-$this->doc->addScriptDeclaration('
+$js = '
 
 	$(document).ready( function(){		
 		$.get("index.php?option=com_geocars&view=opinions&car='.$this->item->id.'", function( data ){			
@@ -170,6 +172,19 @@ $this->doc->addScriptDeclaration('
 		} );
 	});
 
-');
+';
+
+if( !empty( $this->post_data['opinion'] ) ){
+	$js .= ' 
+
+		$(document).ready( function(){
+			$( "#add_opinion_block" ).show();
+		} );
+
+ ';
+}
+
+
+$this->doc->addScriptDeclaration( $js );
 
 

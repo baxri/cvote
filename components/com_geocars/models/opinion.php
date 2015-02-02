@@ -27,9 +27,9 @@ class GeocarsModelOpinion extends JModel
 			throw new Exception("დასაშვებია მაქსიმუმ 1000 სიმბოლო");
 		}
 
-		//if( empty( $post['type'] ) ){
-			//throw new Exception("არ არის მითითებული მოსაზრების ტიპი");
-		//}
+		if( empty( $post['type'] ) ){
+			throw new Exception("არ არის მითითებული მოსაზრების ტიპი");
+		}
 
 		if( empty( $post['car_id'] ) ){
 			throw new Exception("ავტომობილი არ არის მითითებული");
