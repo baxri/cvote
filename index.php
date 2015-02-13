@@ -1,11 +1,5 @@
 <?php
-/**
- * @package		Joomla.Site
- * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
- 
-// Set flag that this is a parent file.
+
 define('_JEXEC', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
@@ -14,17 +8,6 @@ if (file_exists(dirname(__FILE__) . '/defines.php')) {
 }
 
 
-if( !in_array($_SERVER['REMOTE_ADDR'], array(	
-												"92.51.96.50",
-												"192.168.101.111", 
-												"92.54.197.37", 
-												"192.168.0.113",
-												"::1"
-
-											)) )
-{
-	//die("Under Construction...");
-}
 
 
 if (!defined('_JDEFINES')) {
