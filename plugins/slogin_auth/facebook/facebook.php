@@ -1,14 +1,4 @@
 <?php
-/**
- * Social Login
- *
- * @version 	1.0
- * @author		Arkadiy, Joomline
- * @copyright	© 2012. All rights reserved.
- * @license 	GNU/GPL v.3 or later.
- */
-
-// No direct access
 defined('_JEXEC') or die;
 
 class plgSlogin_authFacebook extends JPlugin
